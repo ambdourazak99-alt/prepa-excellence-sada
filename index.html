@@ -12,12 +12,11 @@
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-    scroll-behavior: smooth;
 }
 
 body {
     font-family: 'Poppins', sans-serif;
-    background: #f8fbff;
+    background: #f4f7fb;
     color: #1c1c1c;
 }
 
@@ -41,7 +40,7 @@ nav h2 {
 nav ul {
     list-style: none;
     display: flex;
-    gap: 30px;
+    gap: 25px;
 }
 
 nav ul li a {
@@ -67,12 +66,11 @@ nav ul li a:hover {
 }
 
 .hero-content {
-    max-width: 600px;
-    animation: fadeIn 1.5s ease;
+    max-width: 650px;
 }
 
 .hero h1 {
-    font-size: 50px;
+    font-size: 52px;
     margin-bottom: 20px;
 }
 
@@ -91,10 +89,16 @@ nav ul li a:hover {
     text-decoration: none;
     font-weight: 600;
     transition: 0.3s;
+    margin-right: 15px;
+}
+
+.btn-secondary {
+    background: #dbe9ff;
+    color: #0b3c78;
 }
 
 .btn:hover {
-    background: #e6f0ff;
+    transform: translateY(-3px);
 }
 
 /* SECTION */
@@ -109,10 +113,10 @@ section {
     text-align: center;
 }
 
-/* POLES */
-.poles {
+/* GRID CARDS */
+.grid {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
     gap: 30px;
 }
 
@@ -120,8 +124,9 @@ section {
     background: white;
     padding: 30px;
     border-radius: 15px;
-    box-shadow: 0 10px 25px rgba(0,0,0,0.08);
+    box-shadow: 0 10px 25px rgba(0,0,0,0.06);
     transition: 0.3s;
+    text-align: center;
 }
 
 .card:hover {
@@ -143,31 +148,34 @@ section {
 
 .stat h2 {
     color: #0b3c78;
-    font-size: 40px;
+    font-size: 42px;
 }
 
 .stat p {
     margin-top: 10px;
+    color: #555;
 }
 
 /* CONTACT */
 .contact {
     background: #0b3c78;
     color: white;
-    text-align: center;
     padding: 80px 10%;
+}
+
+.contact-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 30px;
+    text-align: center;
 }
 
 footer {
     background: #072a55;
     color: white;
     text-align: center;
-    padding: 30px;
-}
-
-@keyframes fadeIn {
-    from {opacity:0; transform:translateY(20px);}
-    to {opacity:1; transform:translateY(0);}
+    padding: 25px;
+    font-size: 14px;
 }
 </style>
 </head>
@@ -177,10 +185,12 @@ footer {
 <nav>
     <h2>Prépa Excellence</h2>
     <ul>
-        <li><a href="#">Accueil</a></li>
-        <li><a href="#mission">Mission</a></li>
-        <li><a href="#poles">Pôles</a></li>
-        <li><a href="#contact">Contact</a></li>
+        <li><a href="index.html">Accueil</a></li>
+        <li><a href="poles.html">Pôles</a></li>
+        <li><a href="journal.html">Journal</a></li>
+        <li><a href="actualites.html">Actualités</a></li>
+        <li><a href="plateforme.html">Plateforme</a></li>
+        <li><a href="contact.html">Contact</a></li>
     </ul>
 </nav>
 
@@ -188,21 +198,21 @@ footer {
     <div class="hero-content">
         <h1>L’excellence mahoraise commence ici.</h1>
         <p>
-            Prépa Excellence de Sada est une association étudiante engagée
-            au service de la réussite, de la cohésion et du rayonnement
+            Association étudiante engagée pour la réussite,
+            la cohésion et le rayonnement académique
             de la CPGE de Sada.
         </p>
-        <a href="#mission" class="btn">Découvrir</a>
+        <a href="poles.html" class="btn">Découvrir nos pôles</a>
+        <a href="journal.html" class="btn btn-secondary">Lire le journal</a>
     </div>
 </div>
 
-<section id="mission">
+<section>
     <h2 class="section-title">Notre Mission</h2>
-    <p style="text-align:center; max-width:700px; margin:auto; line-height:1.8;">
-        Accompagner chaque étudiant dans son parcours académique,
-        valoriser les talents et construire un environnement propice
-        à l’excellence. Nous croyons en la force du collectif,
-        en la discipline et en l’ambition.
+    <p style="text-align:center; max-width:750px; margin:auto; line-height:1.8;">
+        Accompagner chaque étudiant vers l’excellence académique,
+        structurer un environnement exigeant et solidaire,
+        et bâtir un réseau d’ambition au service du territoire.
     </p>
 
     <div class="stats">
@@ -221,41 +231,48 @@ footer {
     </div>
 </section>
 
-<section id="poles">
-    <h2 class="section-title">Nos Pôles</h2>
-    <div class="poles">
+<section style="background:#eef3f9;">
+    <h2 class="section-title">Explorer l’association</h2>
+    <div class="grid">
         <div class="card">
-            <h3>Communication & Médias</h3>
-            <p>Image, digital, production et valorisation de l’association.</p>
+            <h3>Nos Pôles</h3>
+            <p>Découvrez l’organisation stratégique de l’association.</p>
+            <a href="poles.html" class="btn">Voir plus</a>
         </div>
         <div class="card">
-            <h3>Événementiel & Culture</h3>
-            <p>Organisation d’événements éducatifs et fédérateurs.</p>
+            <h3>Journal</h3>
+            <p>Récits et témoignages des étudiants.</p>
+            <a href="journal.html" class="btn">Accéder</a>
         </div>
         <div class="card">
-            <h3>Logistique & Financier</h3>
-            <p>Gestion rigoureuse et transparente des ressources.</p>
+            <h3>Actualités</h3>
+            <p>Événements et initiatives récentes.</p>
+            <a href="actualites.html" class="btn">Consulter</a>
         </div>
         <div class="card">
-            <h3>Développement & Partenariats</h3>
-            <p>Création de collaborations durables.</p>
-        </div>
-        <div class="card">
-            <h3>Career & Alumni</h3>
-            <p>Construction d’un réseau solide et ambitieux.</p>
-        </div>
-        <div class="card">
-            <h3>Académique & Concours</h3>
-            <p>Préparation, entraide et performance collective.</p>
+            <h3>Plateforme</h3>
+            <p>Ressources et outils de révision.</p>
+            <a href="plateforme.html" class="btn">Explorer</a>
         </div>
     </div>
 </section>
 
-<section id="contact" class="contact">
-    <h2>Nous contacter</h2>
-    <p>Email : prepasada@gmail.com</p>
-    <p>Téléphone : +33 7 73 44 28 79</p>
-    <p>Quartier Doujani BP 1101, 97640 Sada</p>
+<section class="contact">
+    <h2 class="section-title" style="color:white;">Contact & Localisation</h2>
+    <div class="contact-grid">
+        <div>
+            <h3>Email</h3>
+            <p>prepasada@gmail.com</p>
+        </div>
+        <div>
+            <h3>Téléphone</h3>
+            <p>+33 7 73 44 28 79</p>
+        </div>
+        <div>
+            <h3>Adresse</h3>
+            <p>Quartier Doujani BP 1101<br>97640 Sada, Mayotte</p>
+        </div>
+    </div>
 </section>
 
 <footer>
@@ -263,3 +280,4 @@ footer {
 </footer>
 
 </body>
+</html>
