@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Fiche HGGMC – Afrique & Moyen-Orient</title>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;800&display=swap" rel="stylesheet">
+<style>
+body{
+  font-family:'Inter',sans-serif;
+  background:#f4f7fb;
+  color:#1a1a1a;
+  margin:0;
+  padding:0;
+}
+header{
+  position:fixed;
+  top:0;
+  width:100%;
+  padding:18px 6%;
+  background:white;
+  box-shadow:0 2px 25px rgba(0,0,0,0.05);
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+  z-index:1000;
+}
+.logo{
+  font-weight:800;
+  color:#0b3c78;
+  font-size:20px;
+  text-decoration:none;
+}
+.menu{font-size:28px; cursor:pointer; color:#0b3c78;}
+.side-menu{
+  position:fixed;
+  top:0;
+  right:-320px;
+  width:300px;
+  height:100%;
+  background:white;
+  box-shadow:-5px 0 40px rgba(0,0,0,0.15);
+  padding:70px 30px;
+  display:flex;
+  flex-direction:column;
+  transition:0.4s ease;
+  z-index:2000;
+}
+.side-menu a{
+  text-decoration:none;
+  color:#0b3c78;
+  font-weight:600;
+  margin:18px 0;
+  font-size:18px;
+}
+.close-btn{
+  position:absolute;
+  top:20px;
+  right:25px;
+  font-size:30px;
+  cursor:pointer;
+  color:#0b3c78;
+}
+
+/* CONTENT */
+main{
+  padding:120px 8%;
+}
+h1{
+  color:#0b3c78;
+  font-size:36px;
+  margin-bottom:20px;
+}
+h2{
+  color:#0b3c78;
+  margin-top:40px;
+  margin-bottom:15px;
+}
+p{
+  line-height:1.8;
+  margin-bottom:20px;
+}
+.dialogue{
+  background:#e6f0ff;
+  padding:15px;
+  border-left:4px solid #0b3c78;
+  margin-bottom:20px;
+}
+.section{
+  margin-bottom:60px;
+}
+
+/* FOOTER */
+footer{
+  background:#0b3c78;
+  color:white;
+  text-align:center;
+  padding:40px 6%;
+  margin-top:40px;
+}
+
+/* ANIMATIONS */
+@keyframes fadeInUp{
+  from{opacity:0; transform:translateY(30px);}
+  to{opacity:1; transform:translateY(0);}
+}
+.fade{
+  animation:fadeInUp 1s ease;
+}
+</style>
+</head>
+<body>
+
+<header>
+  <a href="/" class="logo">Prépa Excellence</a>
+  <div class="menu" onclick="openMenu()">☰</div>
+</header>
+
+<div id="sideMenu" class="side-menu">
+  <span class="close-btn" onclick="closeMenu()">×</span>
+  <a href="/">Accueil</a>
+  <a href="poles.html">Pôles</a>
+  <a href="journal.html">Journal</a>
+  <a href="actualites.html">Actualités</a>
+  <a href="plateforme.html">Plateforme</a>
+  <a href="contact.html">Contact</a>
+</div>
+
+<main>
+  <h1 class="fade">HGGMC – Afrique & Moyen-Orient</h1>
+
+  <!-- Page 1 : Contexte -->
+  <div class="section fade">
+    <h2>Contexte géopolitique et démographique</h2>
+    <p>L'Afrique et le Moyen-Orient connaissent une croissance démographique rapide et des dynamiques économiques très diversifiées. Comprendre ces régions nécessite d’analyser l’impact de la population sur le développement économique et social.</p>
+    <div class="dialogue"><strong>Talia dit :</strong> Ah je comprends donc, le développement de l’Afrique et du Moyen-Orient réside en la capacité des états à accompagner sa forte démographie en croissance économique.</div>
+  </div>
+
+  <!-- Page 2 : Développement économique -->
+  <div class="section fade">
+    <h2>Défis et opportunités économiques</h2>
+    <p>Les pays de ces régions font face à des défis liés à l’emploi, à l’urbanisation et à l’éducation. Cependant, ces mêmes facteurs représentent une opportunité : une population jeune et dynamique peut stimuler l’innovation et la croissance.</p>
+    <div class="dialogue"><strong>Naimi dit :</strong> Il est clair que les investissements dans l’éducation et les infrastructures sont essentiels pour transformer la démographie en avantage économique.</div>
+    <p>Exemples : développement des zones industrielles, investissements dans les nouvelles technologies et promotion de l’entrepreneuriat local.</p>
+  </div>
+
+  <!-- Page 3 : Conclusion et perspectives -->
+  <div class="section fade">
+    <h2>Perspectives et stratégies d’avenir</h2>
+    <p>Pour assurer un développement durable, il est nécessaire de mettre en place des politiques économiques adaptées, de renforcer les institutions et d’intégrer la dimension démographique dans la planification nationale.</p>
+    <div class="dialogue"><strong>Mouzida dit :</strong> Je comprends mieux pourquoi les états doivent investir dans l’éducation et l’innovation pour accompagner le développement et ne pas freiner la croissance démographique.</div>
+    <p>En synthèse, le succès des pays africains et du Moyen-Orient dépendra de la capacité à combiner croissance démographique, investissements stratégiques et gouvernance efficace.</p>
+  </div>
+</main>
+
+<footer>
+© 2026 Prépa Excellence de Sada — Tous droits réservés
+</footer>
+
+<script>
+function openMenu(){ document.getElementById("sideMenu").style.right="0"; }
+function closeMenu(){ document.getElementById("sideMenu").style.right="-320px"; }
+</script>
+
+</body>
+</html>
