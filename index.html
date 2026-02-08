@@ -3,96 +3,281 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Prépa Excellence de Sada - Accueil</title>
-<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;800&display=swap" rel="stylesheet">
+<title>Prépa Excellence de Sada</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600;700&family=Inter:wght@300;400;600;800&display=swap" rel="stylesheet">
+
 <style>
-/* RESET + BODY */
-* { margin:0; padding:0; box-sizing:border-box; }
-html, body { width:100%; overflow-x:hidden; font-family:'Inter',sans-serif; background:#f4f7fb; color:#1a1a1a; }
 
-/* HEADER */
-header {
-  position:fixed; top:0; width:100%; padding:18px 6%; background:white;
-  box-shadow:0 2px 20px rgba(0,0,0,0.05); display:flex; justify-content:space-between; align-items:center; z-index:1000;
-}
-header .logo { font-weight:800; font-size:22px; color:#0b3c78; text-decoration:none; }
-header .menu { font-size:28px; cursor:pointer; color:#0b3c78; }
-
-/* SIDE MENU */
-.side-menu {
-  position:fixed; top:0; right:-320px; width:300px; height:100%; background:white;
-  box-shadow:-5px 0 40px rgba(0,0,0,0.15); padding:70px 30px; display:flex; flex-direction:column; transition:0.4s ease; z-index:2000;
-}
-.side-menu a { margin:18px 0; font-weight:600; font-size:18px; color:#0b3c78; text-decoration:none; }
-.close-btn { position:absolute; top:20px; right:25px; font-size:30px; cursor:pointer; color:#0b3c78; }
-
-/* SECTIONS */
-section { padding:100px 6% 50px 6%; }
-.section-title { text-align:center; font-size:36px; margin-bottom:40px; color:#0b3c78; }
-
-/* NEWS GRID */
-.news-grid { display:grid; grid-template-columns:repeat(auto-fit,minmax(280px,1fr)); gap:20px; }
-.news-card { position:relative; cursor:pointer; overflow:hidden; border-radius:10px; width:100%; }
-.news-card img { width:100%; display:block; transition:0.4s; }
-.news-card:hover img { transform:scale(1.05); }
-.news-overlay {
-  position:absolute; bottom:0; left:0; width:100%; background:rgba(11,60,120,0.75);
-  color:white; padding:20px; transition:0.3s;
+/* RESET TOTAL */
+*{
+  margin:0;
+  padding:0;
+  box-sizing:border-box;
 }
 
-/* FOOTER */
-footer { background:#0b3c78; color:white; text-align:center; padding:40px 6%; margin-top:40px; }
+html,body{
+  width:100%;
+  overflow-x:hidden;
+  font-family:'Inter',sans-serif;
+  background:#f2f6fb;
+  color:#111;
+}
 
-/* MOBILE FIX */
-@media(max-width:768px){ .news-grid{grid-template-columns:1fr;} }
+/* ================= HEADER ================= */
+
+header{
+  position:fixed;
+  top:0;
+  left:0;
+  width:100%;
+  background:white;
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+  padding:18px 6%;
+  box-shadow:0 5px 30px rgba(0,0,0,0.05);
+  z-index:1000;
+}
+
+/* LOGO VINTAGE */
+.logo{
+  text-decoration:none;
+  color:#0b3c78;
+  display:flex;
+  flex-direction:column;
+  line-height:1;
+}
+
+.logo-main{
+  font-family:'Playfair Display',serif;
+  font-size:26px;
+  letter-spacing:3px;
+}
+
+.logo-sub{
+  font-size:11px;
+  letter-spacing:2px;
+  margin-top:3px;
+}
+
+/* HAMBURGER */
+.menu{
+  font-size:28px;
+  cursor:pointer;
+  color:#0b3c78;
+}
+
+/* ================= SIDE MENU ================= */
+
+.side-menu{
+  position:fixed;
+  top:0;
+  right:-320px;
+  width:300px;
+  height:100%;
+  background:white;
+  box-shadow:-5px 0 40px rgba(0,0,0,0.15);
+  padding:80px 30px;
+  display:flex;
+  flex-direction:column;
+  transition:0.4s ease;
+  z-index:2000;
+}
+
+.side-menu a{
+  text-decoration:none;
+  color:#0b3c78;
+  font-weight:600;
+  margin:20px 0;
+  font-size:18px;
+  transition:0.3s;
+}
+
+.side-menu a:hover{
+  transform:translateX(5px);
+}
+
+.close-btn{
+  position:absolute;
+  top:20px;
+  right:25px;
+  font-size:30px;
+  cursor:pointer;
+  color:#0b3c78;
+}
+
+/* ================= HERO ================= */
+
+.hero{
+  height:85vh;
+  background:linear-gradient(rgba(11,60,120,0.85),rgba(11,60,120,0.85)),
+  url('https://images.unsplash.com/photo-1523050854058-8df90110c9f1?fit=crop&w=1600') center/cover;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  text-align:center;
+  color:white;
+  padding:0 20px;
+  margin-top:80px;
+  animation:fadeHero 1.5s ease;
+}
+
+.hero h1{
+  font-size:50px;
+  font-weight:800;
+  margin-bottom:20px;
+}
+
+.hero p{
+  max-width:700px;
+  margin:auto;
+  font-size:18px;
+  opacity:0.9;
+}
+
+@keyframes fadeHero{
+  from{opacity:0; transform:translateY(40px);}
+  to{opacity:1; transform:translateY(0);}
+}
+
+/* ================= NEWS SECTION ================= */
+
+section{
+  padding:90px 6%;
+}
+
+.section-title{
+  text-align:center;
+  font-size:38px;
+  color:#0b3c78;
+  margin-bottom:50px;
+  font-weight:800;
+}
+
+.news-grid{
+  display:grid;
+  grid-template-columns:repeat(auto-fit,minmax(300px,1fr));
+  gap:30px;
+}
+
+.news-card{
+  position:relative;
+  overflow:hidden;
+  border-radius:14px;
+  cursor:pointer;
+  box-shadow:0 15px 40px rgba(0,0,0,0.08);
+  transition:0.4s;
+}
+
+.news-card img{
+  width:100%;
+  height:100%;
+  display:block;
+  transition:0.6s;
+}
+
+.news-card:hover{
+  transform:translateY(-8px);
+}
+
+.news-card:hover img{
+  transform:scale(1.1);
+}
+
+.news-overlay{
+  position:absolute;
+  bottom:0;
+  left:0;
+  width:100%;
+  padding:25px;
+  background:linear-gradient(transparent,rgba(0,0,0,0.75));
+  color:white;
+}
+
+.news-overlay h3{
+  font-size:20px;
+  margin-bottom:8px;
+}
+
+/* ================= FOOTER ================= */
+
+footer{
+  background:#0b3c78;
+  color:white;
+  text-align:center;
+  padding:40px 6%;
+  margin-top:40px;
+}
+
+/* RESPONSIVE */
+@media(max-width:768px){
+  .hero h1{font-size:32px;}
+}
+
 </style>
 </head>
 <body>
 
 <header>
-  <a href="/" class="logo">Prépa Excellence</a>
+  <a href="index.html" class="logo">
+    <span class="logo-main">P Exc</span>
+    <span class="logo-sub">PRÉPA EXCELLENCE DE SADA</span>
+  </a>
+
   <div class="menu" onclick="openMenu()">☰</div>
 </header>
 
 <div id="sideMenu" class="side-menu">
   <span class="close-btn" onclick="closeMenu()">×</span>
-  <a href="/">Accueil</a>
+  <a href="index.html">Accueil</a>
   <a href="journal.html">Journal</a>
   <a href="actualites.html">Actualités</a>
   <a href="plateforme.html">Plateforme</a>
   <a href="contact.html">Contact</a>
 </div>
 
+<!-- HERO -->
+<div class="hero">
+  <div>
+    <h1>L’Excellence Mahoraise.</h1>
+    <p>
+      Plateforme officielle de la Prépa Excellence de Sada.  
+      Retrouvez nos actualités, fiches de révision, événements et témoignages étudiants.
+    </p>
+  </div>
+</div>
+
 <!-- NEWS -->
-<section id="news">
-  <h2 class="section-title">📰 Dernières publications</h2>
+<section>
+  <h2 class="section-title">À la Une</h2>
+
   <div class="news-grid">
-    <!-- Événement Inter Invest -->
+
     <div class="news-card" onclick="location.href='evenement-interinvest.html'">
-      <img src="https://images.unsplash.com/photo-1605902711622-cfb43c44342f?fit=crop&w=1200" alt="Conférence Inter Invest">
+      <img src="https://images.unsplash.com/photo-1605902711622-cfb43c44342f?fit=crop&w=1200">
       <div class="news-overlay">
         <h3>Conférence Inter Invest – 23 janvier 2026</h3>
-        <p>Mayotte, lycée de Sada</p>
+        <p>Découvrez le résumé complet de l’événement</p>
       </div>
     </div>
 
-    <!-- Fiche HGGMC Afrique & Moyen-Orient -->
     <div class="news-card" onclick="location.href='fiche-hggmc-afrique-moyen-orient.html'">
-      <img src="https://images.unsplash.com/photo-1454165804606-c3d57bc86b40?fit=crop&w=1200" alt="Fiche HGGMC">
+      <img src="https://images.unsplash.com/photo-1454165804606-c3d57bc86b40?fit=crop&w=1200">
       <div class="news-overlay">
         <h3>Nouvelle fiche HGGMC – Afrique & Moyen-Orient</h3>
-        <p>HGGMC 1ère année – Prépa</p>
+        <p>Fiche complète niveau prépa</p>
       </div>
     </div>
 
-    <!-- Journal étudiant -->
     <div class="news-card" onclick="location.href='journal.html'">
-      <img src="https://images.unsplash.com/photo-1522202176988-66273c2fd55f?fit=crop&w=1200" alt="Journal étudiant">
+      <img src="https://images.unsplash.com/photo-1522202176988-66273c2fd55f?fit=crop&w=1200">
       <div class="news-overlay">
-        <h3>Journal – Témoignages des étudiants</h3>
-        <p>Découvrez les parcours et expériences</p>
+        <h3>Journal des étudiants</h3>
+        <p>Témoignages et parcours inspirants</p>
       </div>
     </div>
+
   </div>
 </section>
 
@@ -101,8 +286,12 @@ footer { background:#0b3c78; color:white; text-align:center; padding:40px 6%; ma
 </footer>
 
 <script>
-function openMenu(){ document.getElementById("sideMenu").style.right="0"; }
-function closeMenu(){ document.getElementById("sideMenu").style.right="-320px"; }
+function openMenu(){
+  document.getElementById("sideMenu").style.right="0";
+}
+function closeMenu(){
+  document.getElementById("sideMenu").style.right="-320px";
+}
 </script>
 
 </body>
