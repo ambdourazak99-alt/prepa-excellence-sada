@@ -4,131 +4,9 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Actualités - Prépa Excellence de Sada</title>
-
 <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
-
-<style>
-*{
-    margin:0;
-    padding:0;
-    box-sizing:border-box;
-}
-
-body{
-    font-family:'Poppins',sans-serif;
-    background:#f4f7fb;
-    color:#1c1c1c;
-}
-
-/* NAVBAR */
-nav{
-    width:100%;
-    padding:20px 10%;
-    display:flex;
-    justify-content:space-between;
-    align-items:center;
-    background:white;
-    box-shadow:0 2px 10px rgba(0,0,0,0.05);
-    position:fixed;
-    top:0;
-    z-index:1000;
-}
-
-nav h2{
-    color:#0b3c78;
-}
-
-nav ul{
-    list-style:none;
-    display:flex;
-    gap:25px;
-}
-
-nav ul li a{
-    text-decoration:none;
-    color:#0b3c78;
-    font-weight:500;
-}
-
-nav ul li a:hover{
-    opacity:0.6;
-}
-
-/* HEADER */
-.header-section{
-    background:#0b3c78;
-    color:white;
-    padding:120px 10% 80px 10%;
-    text-align:center;
-}
-
-.header-section h1{
-    font-size:42px;
-    margin-bottom:15px;
-}
-
-/* GRID CARDS */
-section{
-    padding:80px 10%;
-}
-
-.grid{
-    display:grid;
-    grid-template-columns:repeat(auto-fit,minmax(280px,1fr));
-    gap:30px;
-}
-
-.card{
-    background:white;
-    padding:30px;
-    border-radius:15px;
-    box-shadow:0 10px 25px rgba(0,0,0,0.06);
-    transition:0.3s;
-    text-align:center;
-    text-decoration:none;
-    color:inherit;
-}
-
-.card:hover{
-    transform:translateY(-8px);
-}
-
-.card h3{
-    color:#0b3c78;
-    margin-bottom:15px;
-}
-
-.card p{
-    font-size:16px;
-    line-height:1.5;
-}
-
-/* BUTTON */
-.btn{
-    display:inline-block;
-    margin-top:40px;
-    padding:12px 30px;
-    background:#0b3c78;
-    color:white;
-    border-radius:25px;
-    text-decoration:none;
-    transition:0.3s;
-}
-
-.btn:hover{
-    opacity:0.8;
-}
-
-/* FOOTER */
-footer{
-    background:#072a55;
-    color:white;
-    text-align:center;
-    padding:25px;
-}
-</style>
+<link rel="stylesheet" href="style.css">
 </head>
-
 <body>
 
 <nav>
@@ -144,32 +22,24 @@ footer{
 </nav>
 
 <div class="header-section">
-    <h1>Actualités & Événements</h1>
-    <p>Retrouvez toutes les informations récentes et les événements organisés par l’association.</p>
+    <h1>Actualités et Événements</h1>
+    <p>Restez informé des événements, conférences et projets de la Prépa Excellence de Sada.</p>
 </div>
 
 <section>
-    <div class="grid">
-
-        <a href="event1.html" class="card">
-            <h3>Conférence sur la réussite académique</h3>
-            <p>Une rencontre avec des anciens élèves pour partager leur expérience et conseils.</p>
-        </a>
-
-        <a href="event2.html" class="card">
-            <h3>Journée Portes Ouvertes CPGE</h3>
-            <p>Découverte des pôles et rencontre avec les étudiants et enseignants.</p>
-        </a>
-
-        <a href="event3.html" class="card">
-            <h3>Atelier méthodologie et organisation</h3>
-            <p>Techniques d’apprentissage et astuces pour mieux réussir en CPGE.</p>
-        </a>
-
-    </div>
-
-    <div style="text-align:center;">
-        <a href="index.html" class="btn">Retour à l’accueil</a>
+    <div class="grid" style="display:grid; grid-template-columns:repeat(auto-fit,minmax(280px,1fr)); gap:30px;">
+        <div class="card">
+            <h3>Conférence sur les concours 2026</h3>
+            <p>Le 15 mars, nos enseignants et anciens élèves présenteront des conseils et méthodes pour réussir les concours.</p>
+        </div>
+        <div class="card">
+            <h3>Journée portes ouvertes</h3>
+            <p>Le 22 avril, la Prépa Excellence ouvre ses portes aux futurs étudiants et parents pour découvrir nos pôles et activités.</p>
+        </div>
+        <div class="card">
+            <h3>Collaboration avec les grandes écoles</h3>
+            <p>Annonce d’un partenariat avec des établissements prestigieux pour des visites et ateliers pédagogiques.</p>
+        </div>
     </div>
 </section>
 
