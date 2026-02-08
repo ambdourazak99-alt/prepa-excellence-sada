@@ -4,131 +4,9 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Plateforme de Révision - Prépa Excellence de Sada</title>
-
 <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
-
-<style>
-*{
-    margin:0;
-    padding:0;
-    box-sizing:border-box;
-}
-
-body{
-    font-family:'Poppins',sans-serif;
-    background:#f4f7fb;
-    color:#1c1c1c;
-}
-
-/* NAVBAR */
-nav{
-    width:100%;
-    padding:20px 10%;
-    display:flex;
-    justify-content:space-between;
-    align-items:center;
-    background:white;
-    box-shadow:0 2px 10px rgba(0,0,0,0.05);
-    position:fixed;
-    top:0;
-    z-index:1000;
-}
-
-nav h2{
-    color:#0b3c78;
-}
-
-nav ul{
-    list-style:none;
-    display:flex;
-    gap:25px;
-}
-
-nav ul li a{
-    text-decoration:none;
-    color:#0b3c78;
-    font-weight:500;
-}
-
-nav ul li a:hover{
-    opacity:0.6;
-}
-
-/* HEADER */
-.header-section{
-    background:#0b3c78;
-    color:white;
-    padding:120px 10% 80px 10%;
-    text-align:center;
-}
-
-.header-section h1{
-    font-size:42px;
-    margin-bottom:15px;
-}
-
-/* GRID CARDS */
-section{
-    padding:80px 10%;
-}
-
-.grid{
-    display:grid;
-    grid-template-columns:repeat(auto-fit,minmax(280px,1fr));
-    gap:30px;
-}
-
-.card{
-    background:white;
-    padding:30px;
-    border-radius:15px;
-    box-shadow:0 10px 25px rgba(0,0,0,0.06);
-    transition:0.3s;
-    text-align:center;
-    text-decoration:none;
-    color:inherit;
-}
-
-.card:hover{
-    transform:translateY(-8px);
-}
-
-.card h3{
-    color:#0b3c78;
-    margin-bottom:15px;
-}
-
-.card p{
-    font-size:16px;
-    line-height:1.5;
-}
-
-/* BUTTON */
-.btn{
-    display:inline-block;
-    margin-top:40px;
-    padding:12px 30px;
-    background:#0b3c78;
-    color:white;
-    border-radius:25px;
-    text-decoration:none;
-    transition:0.3s;
-}
-
-.btn:hover{
-    opacity:0.8;
-}
-
-/* FOOTER */
-footer{
-    background:#072a55;
-    color:white;
-    text-align:center;
-    padding:25px;
-}
-</style>
+<link rel="stylesheet" href="style.css">
 </head>
-
 <body>
 
 <nav>
@@ -145,41 +23,23 @@ footer{
 
 <div class="header-section">
     <h1>Plateforme de Révision</h1>
-    <p>Accédez aux ressources, cours et outils pour réussir votre CPGE.</p>
+    <p>Accédez à des cours, QCM et ressources pour optimiser vos révisions et réussir vos concours.</p>
 </div>
 
 <section>
-    <div class="grid">
-
-        <a href="cours-maths.pdf" class="card" target="_blank">
+    <div class="grid" style="display:grid; grid-template-columns:repeat(auto-fit,minmax(280px,1fr)); gap:30px;">
+        <div class="card">
             <h3>Cours de Mathématiques</h3>
-            <p>Toutes les notions essentielles pour préparer vos concours.</p>
-        </a>
-
-        <a href="cours-physique.pdf" class="card" target="_blank">
-            <h3>Cours de Physique</h3>
-            <p>Supports complets et exercices corrigés pour chaque chapitre.</p>
-        </a>
-
-        <a href="cours-francais.pdf" class="card" target="_blank">
-            <h3>Cours de Français</h3>
-            <p>Analyse de textes, méthodologie et conseils pour les concours.</p>
-        </a>
-
-        <a href="qcm-enligne.html" class="card">
-            <h3>QCM & Exercices en ligne</h3>
-            <p>Testez vos connaissances et progressez efficacement.</p>
-        </a>
-
-        <a href="ressources-suppl.html" class="card">
-            <h3>Ressources supplémentaires</h3>
-            <p>Articles, vidéos et outils pour approfondir vos compétences.</p>
-        </a>
-
-    </div>
-
-    <div style="text-align:center;">
-        <a href="index.html" class="btn">Retour à l’accueil</a>
+            <p>Supports complets pour chaque chapitre, avec exercices corrigés et méthodes pas à pas.</p>
+        </div>
+        <div class="card">
+            <h3>QCM et Quiz</h3>
+            <p>Testez vos connaissances avec des questionnaires interactifs et progressifs.</p>
+        </div>
+        <div class="card">
+            <h3>Ressources complémentaires</h3>
+            <p>Articles, fiches synthétiques et vidéos pour approfondir vos connaissances.</p>
+        </div>
     </div>
 </section>
 
