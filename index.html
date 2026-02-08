@@ -8,127 +8,255 @@
 <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600;700&family=Inter:wght@300;400;600;800&display=swap" rel="stylesheet">
 
 <style>
-/* RESET */
+
+/* ================= RESET ================= */
 *{margin:0;padding:0;box-sizing:border-box;}
-html,body{width:100%;overflow-x:hidden;font-family:'Inter',sans-serif;background:#f2f7fb;color:#111;}
+body{
+font-family:'Inter',sans-serif;
+background:#f4f8fd;
+color:#111;
+overflow-x:hidden;
+}
 
 /* ================= HEADER ================= */
 header{
-  position:fixed;top:0;left:0;width:100%;background:white;
-  display:flex;justify-content:space-between;align-items:center;
-  padding:18px 6%;box-shadow:0 5px 30px rgba(0,0,0,0.05);z-index:1000;
+position:fixed;
+width:100%;
+background:white;
+display:flex;
+justify-content:space-between;
+align-items:center;
+padding:18px 6%;
+box-shadow:0 5px 30px rgba(0,0,0,0.05);
+z-index:1000;
 }
-.logo{
-  text-decoration:none;color:#0b3c78;display:flex;flex-direction:column;line-height:1;
-}
-.logo-main{font-family:'Playfair Display',serif;font-size:28px;letter-spacing:3px;}
-.logo-sub{font-size:12px;letter-spacing:2px;margin-top:2px;}
-.menu{font-size:28px;cursor:pointer;color:#0b3c78;}
 
-/* SIDE MENU */
-.side-menu{
-  position:fixed;top:0;right:-320px;width:300px;height:100%;
-  background:white;box-shadow:-5px 0 40px rgba(0,0,0,0.15);
-  padding:80px 30px;display:flex;flex-direction:column;transition:0.4s ease;z-index:2000;
+.logo{
+text-decoration:none;
+color:#0b3c78;
+display:flex;
+flex-direction:column;
 }
-.side-menu a{margin:20px 0;font-weight:600;font-size:18px;text-decoration:none;color:#0b3c78;transition:0.3s;}
-.side-menu a:hover{transform:translateX(5px);}
-.close-btn{position:absolute;top:20px;right:25px;font-size:30px;cursor:pointer;color:#0b3c78;}
+
+.logo-main{
+font-family:'Playfair Display',serif;
+font-size:28px;
+letter-spacing:3px;
+}
+
+.logo-sub{
+font-size:12px;
+letter-spacing:2px;
+}
+
+.menu{
+font-size:28px;
+cursor:pointer;
+color:#0b3c78;
+}
 
 /* ================= HERO ================= */
 .hero{
-  height:85vh;display:flex;align-items:center;justify-content:center;text-align:center;
-  color:white;position:relative;
-  background:linear-gradient(rgba(11,60,120,0.7),rgba(11,60,120,0.7)),
-  url('https://images.unsplash.com/photo-1523050854058-8df90110c9f1?fit=crop&w=1600') center/cover no-repeat;
-  overflow:hidden;margin-top:80px;
+height:100vh;
+background:linear-gradient(135deg,#0b3c78,#0f5fc4);
+display:flex;
+align-items:center;
+justify-content:center;
+text-align:center;
+color:white;
+padding:0 20px;
+position:relative;
+overflow:hidden;
 }
-.hero::after{
-  content:"";position:absolute;bottom:0;left:0;width:200%;height:200%;
-  background:rgba(0,123,255,0.2);
-  border-radius:50%;
-  animation:wave 8s infinite linear;
-  z-index:0;
+
+.hero::before{
+content:"";
+position:absolute;
+width:600px;
+height:600px;
+background:rgba(255,255,255,0.08);
+border-radius:50%;
+top:-200px;
+right:-200px;
+animation:float 6s infinite ease-in-out;
 }
-@keyframes wave{
-  0%{transform:translateX(-50%) translateY(0);}
-  50%{transform:translateX(-50%) translateY(15px);}
-  100%{transform:translateX(-50%) translateY(0);}
+
+@keyframes float{
+0%{transform:translateY(0);}
+50%{transform:translateY(30px);}
+100%{transform:translateY(0);}
 }
-.hero-content{position:relative;z-index:1;animation:fadeHero 1.5s ease;}
-.hero h1{font-size:50px;font-weight:800;margin-bottom:20px;}
-.hero p{max-width:700px;margin:auto;font-size:18px;opacity:0.9;}
-@keyframes fadeHero{from{opacity:0;transform:translateY(40px);}to{opacity:1;transform:translateY(0);}}
+
+.hero h1{
+font-size:55px;
+font-weight:800;
+margin-bottom:20px;
+}
+
+.hero p{
+max-width:700px;
+margin:auto;
+font-size:20px;
+opacity:0.9;
+}
 
 /* ================= NEWS ================= */
-section{padding:90px 6% 50px 6%;max-width:1200px;margin:auto;}
-.section-title{text-align:center;font-size:38px;color:#0b3c78;margin-bottom:50px;font-weight:800;}
-.news-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));gap:30px;}
-.news-card{position:relative;overflow:hidden;border-radius:16px;cursor:pointer;box-shadow:0 15px 40px rgba(0,0,0,0.08);transition:0.4s;}
-.news-card img{width:100%;height:100%;display:block;transition:0.6s;}
-.news-card:hover{transform:translateY(-8px);}
-.news-card:hover img{transform:scale(1.12);}
-.news-overlay{position:absolute;bottom:0;left:0;width:100%;padding:25px;background:linear-gradient(transparent,rgba(0,0,0,0.75));color:white;}
-.news-overlay h3{font-size:20px;margin-bottom:8px;}
+section{
+padding:100px 6%;
+max-width:1200px;
+margin:auto;
+}
 
-/* FOOTER */
-footer{background:#0b3c78;color:white;text-align:center;padding:40px 6%;margin-top:50px;}
+.section-title{
+font-size:38px;
+color:#0b3c78;
+text-align:center;
+margin-bottom:60px;
+font-weight:800;
+}
 
-/* RESPONSIVE */
-@media(max-width:768px){.hero h1{font-size:32px;}.news-grid{grid-template-columns:1fr;}}
+.news-grid{
+display:grid;
+grid-template-columns:repeat(auto-fit,minmax(300px,1fr));
+gap:40px;
+}
+
+.news-card{
+background:white;
+border-radius:20px;
+overflow:hidden;
+box-shadow:0 20px 50px rgba(0,0,0,0.08);
+transition:0.4s;
+cursor:pointer;
+}
+
+.news-card:hover{
+transform:translateY(-12px);
+}
+
+.news-card img{
+width:100%;
+height:220px;
+object-fit:cover;
+}
+
+.news-card-content{
+padding:25px;
+}
+
+.news-card h3{
+color:#0b3c78;
+margin-bottom:10px;
+}
+
+/* ================= IA SECTION ================= */
+
+.ai-section{
+background:white;
+padding:80px 6%;
+border-radius:20px;
+box-shadow:0 20px 50px rgba(0,0,0,0.05);
+}
+
+.chat-box{
+border:1px solid #ddd;
+border-radius:15px;
+padding:20px;
+height:300px;
+overflow-y:auto;
+background:#f9fbff;
+margin-bottom:20px;
+}
+
+.chat-input{
+display:flex;
+gap:10px;
+}
+
+.chat-input input{
+flex:1;
+padding:12px;
+border-radius:10px;
+border:1px solid #ccc;
+}
+
+.chat-input button{
+background:#0b3c78;
+color:white;
+border:none;
+padding:12px 20px;
+border-radius:10px;
+cursor:pointer;
+}
+
+/* ================= FOOTER ================= */
+footer{
+background:#0b3c78;
+color:white;
+text-align:center;
+padding:50px 6%;
+margin-top:100px;
+}
+
 </style>
 </head>
 <body>
 
 <header>
-  <a href="index.html" class="logo">
-    <span class="logo-main">P Exc</span>
-    <span class="logo-sub">Prépa Excellence de Sada</span>
-  </a>
-  <div class="menu" onclick="openMenu()">☰</div>
+<a href="index.html" class="logo">
+<span class="logo-main">P Exc</span>
+<span class="logo-sub">Prépa Excellence de Sada</span>
+</a>
+<div class="menu">☰</div>
 </header>
 
-<div id="sideMenu" class="side-menu">
-  <span class="close-btn" onclick="closeMenu()">×</span>
-  <a href="index.html">Accueil</a>
-  <a href="journal.html">Journal</a>
-  <a href="actualites.html">Actualités</a>
-  <a href="plateforme.html">Plateforme</a>
-  <a href="contact.html">Contact</a>
-</div>
-
+<!-- HERO -->
 <div class="hero">
-  <div class="hero-content">
-    <h1>L’Excellence Mahoraise</h1>
-    <p>Découvrez nos actualités, fiches de révision et témoignages étudiants dans un site moderne et interactif.</p>
-  </div>
+<div>
+<h1>L’Excellence Mahoraise.</h1>
+<p>Plateforme académique digitale officielle de la Prépa Excellence de Sada.</p>
+</div>
 </div>
 
+<!-- NEWS -->
 <section>
-  <h2 class="section-title">À la Une</h2>
-  <div class="news-grid">
-    <div class="news-card" onclick="location.href='evenement-interinvest.html'">
-      <img src="https://images.unsplash.com/photo-1605902711622-cfb43c44342f?fit=crop&w=1200" alt="Conférence Inter Invest">
-      <div class="news-overlay">
-        <h3>Conférence Inter Invest – 23 janvier 2026</h3>
-        <p>Résumé complet de l’événement</p>
-      </div>
-    </div>
-    <div class="news-card" onclick="location.href='fiche-hggmc-afrique-moyen-orient.html'">
-      <img src="https://images.unsplash.com/photo-1454165804606-c3d57bc86b40?fit=crop&w=1200" alt="Fiche HGGMC">
-      <div class="news-overlay">
-        <h3>Nouvelle fiche HGGMC – Afrique & Moyen-Orient</h3>
-        <p>HGGMC 1ère année – Prépa</p>
-      </div>
-    </div>
-    <div class="news-card" onclick="location.href='journal.html'">
-      <img src="https://images.unsplash.com/photo-1522202176988-66273c2fd55f?fit=crop&w=1200" alt="Journal étudiant">
-      <div class="news-overlay">
-        <h3>Journal des étudiants</h3>
-        <p>Témoignages et parcours inspirants</p>
-      </div>
-    </div>
-  </div>
+<h2 class="section-title">Actualités & Publications</h2>
+
+<div class="news-grid">
+
+<div class="news-card" onclick="location.href='evenement-interinvest.html'">
+<img src="https://images.unsplash.com/photo-1605902711622-cfb43c44342f?fit=crop&w=1200">
+<div class="news-card-content">
+<h3>Conférence Inter Invest</h3>
+<p>Résumé complet de l'événement du 23 janvier 2026.</p>
+</div>
+</div>
+
+<div class="news-card" onclick="location.href='fiche-hggmc-afrique-moyen-orient.html'">
+<img src="https://images.unsplash.com/photo-1454165804606-c3d57bc86b40?fit=crop&w=1200">
+<div class="news-card-content">
+<h3>Nouvelle fiche HGGMC</h3>
+<p>Afrique & Moyen-Orient – 1ère année CPGE.</p>
+</div>
+</div>
+
+</div>
+</section>
+
+<!-- IA ASSISTANT -->
+<section>
+<h2 class="section-title">Assistant Académique IA</h2>
+
+<div class="ai-section">
+<div class="chat-box" id="chatBox">
+<p><strong>Assistant :</strong> Bonjour 👋 Posez-moi votre question sur les concours ou les fiches.</p>
+</div>
+
+<div class="chat-input">
+<input type="text" id="userInput" placeholder="Écrivez votre question...">
+<button onclick="sendMessage()">Envoyer</button>
+</div>
+</div>
 </section>
 
 <footer>
@@ -136,8 +264,16 @@ footer{background:#0b3c78;color:white;text-align:center;padding:40px 6%;margin-t
 </footer>
 
 <script>
-function openMenu(){ document.getElementById("sideMenu").style.right="0"; }
-function closeMenu(){ document.getElementById("sideMenu").style.right="-320px"; }
+function sendMessage(){
+let input=document.getElementById("userInput");
+let chat=document.getElementById("chatBox");
+if(input.value.trim()!==""){
+chat.innerHTML+="<p><strong>Vous :</strong> "+input.value+"</p>";
+chat.innerHTML+="<p><strong>Assistant :</strong> Merci pour votre question. Une réponse académique détaillée sera bientôt disponible.</p>";
+input.value="";
+chat.scrollTop=chat.scrollHeight;
+}
+}
 </script>
 
 </body>
