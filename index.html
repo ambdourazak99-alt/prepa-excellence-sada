@@ -8,174 +8,169 @@
 <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
 
 <style>
-* {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
 }
 
-body {
-    font-family: 'Poppins', sans-serif;
-    background: #f4f7fb;
-    color: #1c1c1c;
+body{
+    font-family:'Poppins',sans-serif;
+    background:#f4f7fb;
+    color:#1c1c1c;
 }
 
 /* NAVBAR */
-nav {
-    position: fixed;
-    width: 100%;
-    padding: 20px 10%;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    background: white;
-    box-shadow: 0 2px 10px rgba(0,0,0,0.05);
-    z-index: 1000;
+nav{
+    position:fixed;
+    width:100%;
+    padding:20px 10%;
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    background:white;
+    box-shadow:0 2px 10px rgba(0,0,0,0.05);
+    z-index:1000;
 }
 
-nav h2 {
-    color: #0b3c78;
+nav h2{
+    color:#0b3c78;
 }
 
-nav ul {
-    list-style: none;
-    display: flex;
-    gap: 25px;
+nav ul{
+    list-style:none;
+    display:flex;
+    gap:25px;
 }
 
-nav ul li a {
-    text-decoration: none;
-    color: #0b3c78;
-    font-weight: 500;
-    transition: 0.3s;
+nav ul li a{
+    text-decoration:none;
+    color:#0b3c78;
+    font-weight:500;
+    transition:0.3s;
 }
 
-nav ul li a:hover {
-    opacity: 0.6;
+nav ul li a:hover{
+    opacity:0.6;
 }
 
 /* HERO */
-.hero {
-    height: 100vh;
-    background: linear-gradient(rgba(11,60,120,0.85), rgba(11,60,120,0.85)),
+.hero{
+    height:100vh;
+    background:linear-gradient(rgba(11,60,120,0.85), rgba(11,60,120,0.85)),
     url('https://images.unsplash.com/photo-1523050854058-8df90110c9f1') center/cover;
-    color: white;
-    display: flex;
-    align-items: center;
-    padding: 0 10%;
+    color:white;
+    display:flex;
+    align-items:center;
+    padding:0 10%;
 }
 
-.hero-content {
-    max-width: 650px;
+.hero-content{
+    max-width:700px;
 }
 
-.hero h1 {
-    font-size: 52px;
-    margin-bottom: 20px;
+.hero h1{
+    font-size:55px;
+    margin-bottom:20px;
 }
 
-.hero p {
-    font-size: 18px;
-    margin-bottom: 30px;
-    line-height: 1.6;
+.hero p{
+    font-size:18px;
+    margin-bottom:30px;
+    line-height:1.6;
 }
 
-.btn {
-    display: inline-block;
-    padding: 14px 35px;
-    background: white;
-    color: #0b3c78;
-    border-radius: 30px;
-    text-decoration: none;
-    font-weight: 600;
-    transition: 0.3s;
-    margin-right: 15px;
+.btn{
+    display:inline-block;
+    padding:14px 35px;
+    background:white;
+    color:#0b3c78;
+    border-radius:30px;
+    text-decoration:none;
+    font-weight:600;
+    transition:0.3s;
+    margin-right:15px;
 }
 
-.btn-secondary {
-    background: #dbe9ff;
-    color: #0b3c78;
+.btn-blue{
+    background:#dbe9ff;
 }
 
-.btn:hover {
-    transform: translateY(-3px);
+.btn:hover{
+    transform:translateY(-3px);
 }
 
 /* SECTION */
-section {
-    padding: 100px 10%;
+section{
+    padding:100px 10%;
 }
 
-.section-title {
-    font-size: 36px;
-    margin-bottom: 40px;
-    color: #0b3c78;
-    text-align: center;
-}
-
-/* GRID CARDS */
-.grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
-    gap: 30px;
-}
-
-.card {
-    background: white;
-    padding: 30px;
-    border-radius: 15px;
-    box-shadow: 0 10px 25px rgba(0,0,0,0.06);
-    transition: 0.3s;
-    text-align: center;
-}
-
-.card:hover {
-    transform: translateY(-8px);
-}
-
-.card h3 {
-    margin-bottom: 15px;
-    color: #0b3c78;
+.section-title{
+    font-size:36px;
+    margin-bottom:40px;
+    color:#0b3c78;
+    text-align:center;
 }
 
 /* STATS */
-.stats {
-    display: flex;
-    justify-content: space-around;
-    text-align: center;
-    margin-top: 60px;
+.stats{
+    display:flex;
+    justify-content:space-around;
+    text-align:center;
+    margin-top:60px;
+    flex-wrap:wrap;
 }
 
-.stat h2 {
-    color: #0b3c78;
-    font-size: 42px;
+.stat{
+    margin:20px;
 }
 
-.stat p {
-    margin-top: 10px;
-    color: #555;
+.stat h2{
+    color:#0b3c78;
+    font-size:42px;
+}
+
+/* GRID */
+.grid{
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
+    gap:30px;
+}
+
+.card{
+    background:white;
+    padding:35px;
+    border-radius:15px;
+    box-shadow:0 10px 25px rgba(0,0,0,0.06);
+    transition:0.3s;
+    text-align:center;
+    text-decoration:none;
+    color:inherit;
+}
+
+.card:hover{
+    transform:translateY(-8px);
 }
 
 /* CONTACT */
-.contact {
-    background: #0b3c78;
-    color: white;
-    padding: 80px 10%;
+.contact{
+    background:#0b3c78;
+    color:white;
+    padding:80px 10%;
 }
 
-.contact-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-    gap: 30px;
-    text-align: center;
+.contact-grid{
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
+    gap:30px;
+    text-align:center;
 }
 
-footer {
-    background: #072a55;
-    color: white;
-    text-align: center;
-    padding: 25px;
-    font-size: 14px;
+footer{
+    background:#072a55;
+    color:white;
+    text-align:center;
+    padding:25px;
 }
 </style>
 </head>
@@ -194,25 +189,30 @@ footer {
     </ul>
 </nav>
 
+<!-- HERO -->
 <div class="hero">
     <div class="hero-content">
         <h1>L’excellence mahoraise commence ici.</h1>
         <p>
-            Association étudiante engagée pour la réussite,
-            la cohésion et le rayonnement académique
-            de la CPGE de Sada.
+            Une association structurée pour accompagner les étudiants
+            de la CPGE de Sada vers les grandes écoles
+            et les parcours d’excellence.
         </p>
-        <a href="poles.html" class="btn">Découvrir nos pôles</a>
-        <a href="journal.html" class="btn btn-secondary">Lire le journal</a>
+
+        <!-- BOUTONS CLIQUABLES -->
+        <a href="poles.html" class="btn">Nos Pôles</a>
+        <a href="journal.html" class="btn btn-blue">Journal</a>
+        <a href="plateforme.html" class="btn">Plateforme</a>
     </div>
 </div>
 
+<!-- MISSION -->
 <section>
     <h2 class="section-title">Notre Mission</h2>
-    <p style="text-align:center; max-width:750px; margin:auto; line-height:1.8;">
-        Accompagner chaque étudiant vers l’excellence académique,
-        structurer un environnement exigeant et solidaire,
-        et bâtir un réseau d’ambition au service du territoire.
+    <p style="text-align:center; max-width:800px; margin:auto; line-height:1.8;">
+        Structurer un environnement exigeant, solidaire et ambitieux.
+        Valoriser les talents mahorais et construire un réseau académique
+        durable au service du territoire.
     </p>
 
     <div class="stats">
@@ -231,32 +231,40 @@ footer {
     </div>
 </section>
 
+<!-- EXPLORER -->
 <section style="background:#eef3f9;">
     <h2 class="section-title">Explorer l’association</h2>
     <div class="grid">
-        <div class="card">
+
+        <a href="poles.html" class="card">
             <h3>Nos Pôles</h3>
-            <p>Découvrez l’organisation stratégique de l’association.</p>
-            <a href="poles.html" class="btn">Voir plus</a>
-        </div>
-        <div class="card">
+            <p>Découvrez l’organisation stratégique complète.</p>
+        </a>
+
+        <a href="journal.html" class="card">
             <h3>Journal</h3>
-            <p>Récits et témoignages des étudiants.</p>
-            <a href="journal.html" class="btn">Accéder</a>
-        </div>
-        <div class="card">
+            <p>Récits, témoignages et mémoire de la prépa.</p>
+        </a>
+
+        <a href="actualites.html" class="card">
             <h3>Actualités</h3>
-            <p>Événements et initiatives récentes.</p>
-            <a href="actualites.html" class="btn">Consulter</a>
-        </div>
-        <div class="card">
+            <p>Événements, conférences et partenariats.</p>
+        </a>
+
+        <a href="plateforme.html" class="card">
             <h3>Plateforme</h3>
-            <p>Ressources et outils de révision.</p>
-            <a href="plateforme.html" class="btn">Explorer</a>
-        </div>
+            <p>Ressources académiques et outils de révision.</p>
+        </a>
+
+        <a href="contact.html" class="card">
+            <h3>Contact</h3>
+            <p>Informations, localisation et prise de contact.</p>
+        </a>
+
     </div>
 </section>
 
+<!-- CONTACT -->
 <section class="contact">
     <h2 class="section-title" style="color:white;">Contact & Localisation</h2>
     <div class="contact-grid">
@@ -276,7 +284,7 @@ footer {
 </section>
 
 <footer>
-    © 2026 Prépa Excellence de Sada — Tous droits réservés
+© 2026 Prépa Excellence de Sada — Tous droits réservés
 </footer>
 
 </body>
