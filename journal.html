@@ -4,139 +4,46 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Journal - Prépa Excellence de Sada</title>
-
 <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
-
-<style>
-body{
-    font-family:'Poppins',sans-serif;
-    background:#f4f7fb;
-    color:#1c1c1c;
-    margin:0;
-}
-
-/* NAVBAR */
-nav{
-    width:100%;
-    padding:20px 10%;
-    display:flex;
-    justify-content:space-between;
-    align-items:center;
-    background:white;
-    box-shadow:0 2px 10px rgba(0,0,0,0.05);
-    position:fixed;
-    top:0;
-    z-index:1000;
-}
-
-nav h2{color:#0b3c78;}
-nav ul{list-style:none; display:flex; gap:25px;}
-nav ul li a{text-decoration:none; color:#0b3c78; font-weight:500;}
-nav ul li a:hover{opacity:0.6;}
-
-/* HEADER */
-.header-section{
-    background:#0b3c78;
-    color:white;
-    padding:120px 10% 80px 10%;
-    text-align:center;
-}
-
-.header-section h1{
-    font-size:42px;
-    margin-bottom:15px;
-}
-
-/* GRID CARDS */
-section{
-    padding:80px 10%;
-}
-
-.grid{
-    display:grid;
-    grid-template-columns:repeat(auto-fit,minmax(280px,1fr));
-    gap:30px;
-}
-
-.card{
-    background:white;
-    padding:30px;
-    border-radius:15px;
-    box-shadow:0 10px 25px rgba(0,0,0,0.06);
-    transition:0.3s;
-    text-align:center;
-    text-decoration:none;
-    color:inherit;
-}
-
-.card:hover{
-    transform:translateY(-8px);
-}
-
-.card h3{
-    color:#0b3c78;
-    margin-bottom:15px;
-}
-
-.card p{
-    font-size:16px;
-    line-height:1.5;
-}
-
-/* FOOTER */
-footer{
-    background:#072a55;
-    color:white;
-    text-align:center;
-    padding:25px;
-}
-</style>
+<link rel="stylesheet" href="style.css">
 </head>
-
 <body>
-
 <nav>
-    <h2>Prépa Excellence</h2>
-    <ul>
-        <li><a href="index.html">Accueil</a></li>
-        <li><a href="poles.html">Pôles</a></li>
-        <li><a href="journal.html">Journal</a></li>
-        <li><a href="actualites.html">Actualités</a></li>
-        <li><a href="plateforme.html">Plateforme</a></li>
-        <li><a href="contact.html">Contact</a></li>
-    </ul>
+  <div class="logo">Prépa Excellence</div>
+  <div class="hamburger" onclick="toggleMenu()">☰</div>
+  <ul class="nav-links">
+      <li><a href="index.html">Accueil</a></li>
+      <li><a href="poles.html">Pôles</a></li>
+      <li><a href="journal.html">Journal</a></li>
+      <li><a href="actualites.html">Actualités</a></li>
+      <li><a href="plateforme.html">Plateforme</a></li>
+      <li><a href="contact.html">Contact</a></li>
+  </ul>
 </nav>
-
-<div class="header-section">
-    <h1>Journal de la Prépa</h1>
-    <p>Découvrez les récits et témoignages des étudiants de la Prépa Excellence de Sada.</p>
-</div>
+<script>function toggleMenu(){document.querySelector('.nav-links').classList.toggle('active');}</script>
 
 <section>
-    <div class="grid">
-        <!-- Carte 1 -->
-        <a href="recit-amine.html" class="card">
-            <h3>De Sada aux grandes écoles : mon parcours</h3>
-            <p>Amine raconte son expérience et les défis rencontrés pendant sa CPGE.</p>
-        </a>
-
-        <!-- Carte 2 -->
-        <a href="recit-aicha.html" class="card">
-            <h3>Vivre la CPGE à Sada</h3>
-            <p>Aicha partage son quotidien, ses réussites et ses difficultés au sein de la prépa.</p>
-        </a>
-
-        <!-- Carte 3 -->
-        <a href="recit-selim.html" class="card">
-            <h3>Persévérer malgré les obstacles</h3>
-            <p>Selim raconte comment la Prépa Excellence l’a aidé à surmonter ses défis académiques.</p>
-        </a>
+<h2 class="section-title">Journal de la Prépa</h2>
+<div class="grid">
+    <div class="card">
+        <h3>De Sada aux grandes écoles</h3>
+        <p>Amine raconte son expérience en CPGE et son parcours vers l’excellence.</p>
+        <a href="article-amine.html" class="btn">Lire</a>
     </div>
+    <div class="card">
+        <h3>Parcours et réussite</h3>
+        <p>Youmrane partage son témoignage sur les défis rencontrés et les stratégies adoptées.</p>
+        <a href="article-youmrane.html" class="btn">Lire</a>
+    </div>
+    <div class="card">
+        <h3>Réussite et défis</h3>
+        <p>Mouzida explique son quotidien en CPGE et comment elle s’organise pour exceller.</p>
+        <a href="article-mouzida.html" class="btn">Lire</a>
+    </div>
+</div>
+<a href="index.html" class="btn">Retour à l'accueil</a>
 </section>
 
-<footer>
-© 2026 Prépa Excellence de Sada — Tous droits réservés
-</footer>
-
+<footer>© 2026 Prépa Excellence de Sada — Tous droits réservés</footer>
 </body>
 </html>
