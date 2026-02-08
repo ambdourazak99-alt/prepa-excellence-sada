@@ -9,20 +9,25 @@
 
 <style>
 
-/* RESET */
+/* ================= RESET ================= */
 *{margin:0;padding:0;box-sizing:border-box}
-body{font-family:'Inter',sans-serif;background:#f4f7fb;color:#1a1a1a}
+body{
+  font-family:'Inter',sans-serif;
+  background:#f4f7fb;
+  color:#1a1a1a;
+  overflow-x:hidden;
+}
 
-/* HEADER */
+/* ================= HEADER ================= */
 header{
   position:fixed;
   width:100%;
   background:white;
-  padding:15px 5%;
+  padding:15px 6%;
   display:flex;
   justify-content:space-between;
   align-items:center;
-  box-shadow:0 2px 15px rgba(0,0,0,0.05);
+  box-shadow:0 2px 20px rgba(0,0,0,0.05);
   z-index:1000;
 }
 
@@ -35,35 +40,75 @@ header{
 .menu{
   font-size:26px;
   cursor:pointer;
+  color:#0b3c78;
 }
 
-/* HERO */
+/* ================= MENU LATÉRAL ================= */
+.side-menu{
+  position:fixed;
+  top:0;
+  right:-320px;
+  width:300px;
+  height:100%;
+  background:white;
+  box-shadow:-5px 0 30px rgba(0,0,0,0.15);
+  padding:70px 30px;
+  display:flex;
+  flex-direction:column;
+  transition:0.4s ease;
+  z-index:2000;
+}
+
+.side-menu a{
+  text-decoration:none;
+  color:#0b3c78;
+  font-weight:600;
+  margin:15px 0;
+  font-size:18px;
+  transition:0.3s;
+}
+
+.side-menu a:hover{
+  opacity:0.6;
+}
+
+.close-btn{
+  position:absolute;
+  top:20px;
+  right:25px;
+  font-size:30px;
+  cursor:pointer;
+  color:#0b3c78;
+}
+
+/* ================= HERO ================= */
 .hero{
-  margin-top:80px;
-  height:80vh;
+  margin-top:70px;
+  height:85vh;
   background:url('https://images.unsplash.com/photo-1523050854058-8df90110c9f1?fit=crop&w=1600&h=900') center/cover;
+  position:relative;
   display:flex;
   align-items:flex-end;
   padding:60px;
   color:white;
-  position:relative;
 }
 
 .hero::after{
   content:'';
   position:absolute;
   inset:0;
-  background:linear-gradient(to top, rgba(0,0,0,0.7), transparent);
+  background:linear-gradient(to top, rgba(0,0,0,0.75), transparent);
 }
 
 .hero-content{
   position:relative;
   z-index:2;
   max-width:600px;
+  animation:fadeUp 1.2s ease forwards;
 }
 
 .hero h1{
-  font-size:42px;
+  font-size:45px;
   margin-bottom:15px;
 }
 
@@ -72,41 +117,54 @@ header{
   opacity:0.9;
 }
 
-/* SECTION */
+/* ================= SECTION ================= */
 section{
-  padding:80px 5%;
+  padding:90px 6%;
 }
 
 .section-title{
-  font-size:28px;
+  font-size:30px;
   margin-bottom:40px;
   color:#0b3c78;
 }
 
-/* GRID ARTICLES */
+/* ================= GRID ================= */
 .grid{
   display:grid;
   grid-template-columns:repeat(auto-fit,minmax(300px,1fr));
   gap:30px;
 }
 
+/* ================= CARDS ================= */
 .card{
   background:white;
-  border-radius:15px;
+  border-radius:18px;
   overflow:hidden;
-  box-shadow:0 10px 25px rgba(0,0,0,0.08);
-  transition:0.3s;
+  box-shadow:0 15px 30px rgba(0,0,0,0.08);
+  transition:0.4s ease;
+  opacity:0;
+  transform:translateY(40px);
+}
+
+.card.show{
+  opacity:1;
+  transform:translateY(0);
 }
 
 .card:hover{
-  transform:translateY(-8px);
-  box-shadow:0 20px 35px rgba(0,0,0,0.15);
+  transform:translateY(-10px);
+  box-shadow:0 25px 40px rgba(0,0,0,0.15);
 }
 
 .card img{
   width:100%;
   height:200px;
   object-fit:cover;
+  transition:0.4s;
+}
+
+.card:hover img{
+  transform:scale(1.05);
 }
 
 .card-content{
@@ -125,21 +183,50 @@ section{
 
 .btn{
   display:inline-block;
-  padding:8px 20px;
+  padding:8px 22px;
   background:#0b3c78;
   color:white;
   border-radius:30px;
   text-decoration:none;
   font-size:14px;
+  transition:0.3s;
 }
 
-/* FOOTER */
+.btn:hover{
+  background:#072a55;
+}
+
+/* ================= STATS ================= */
+.stats{
+  display:flex;
+  justify-content:space-around;
+  margin-top:60px;
+  text-align:center;
+  flex-wrap:wrap;
+}
+
+.stat h2{
+  color:#0b3c78;
+  font-size:42px;
+}
+
+.stat p{
+  margin-top:8px;
+}
+
+/* ================= FOOTER ================= */
 footer{
   background:#0b3c78;
   color:white;
   text-align:center;
-  padding:40px 5%;
+  padding:50px 6%;
   margin-top:60px;
+}
+
+/* ================= ANIMATIONS ================= */
+@keyframes fadeUp{
+  from{opacity:0; transform:translateY(30px);}
+  to{opacity:1; transform:translateY(0);}
 }
 
 </style>
@@ -148,18 +235,26 @@ footer{
 
 <header>
   <div class="logo">Prépa Excellence</div>
-  <div class="menu">☰</div>
+  <div class="menu" onclick="openMenu()">☰</div>
 </header>
 
-<!-- HERO ACTUALITÉ PRINCIPALE -->
+<div id="sideMenu" class="side-menu">
+  <span class="close-btn" onclick="closeMenu()">×</span>
+  <a href="index.html">Accueil</a>
+  <a href="poles.html">Pôles</a>
+  <a href="journal.html">Journal</a>
+  <a href="actualites.html">Actualités</a>
+  <a href="plateforme.html">Plateforme</a>
+  <a href="contact.html">Contact</a>
+</div>
+
 <div class="hero">
   <div class="hero-content">
     <h1>Conférence Inter Invest à Mayotte</h1>
-    <p>Retour sur un événement majeur pour le développement économique local.</p>
+    <p>Retour sur un événement stratégique pour le développement économique local.</p>
   </div>
 </div>
 
-<!-- SECTION ACTUALITÉS -->
 <section>
   <h2 class="section-title">À la une</h2>
 
@@ -177,8 +272,8 @@ footer{
     <div class="card">
       <img src="https://images.unsplash.com/photo-1522202176988-66273c2fd55f?fit=crop&w=800&h=400">
       <div class="card-content">
-        <h3>Journal - Naimi</h3>
-        <p>Son expérience en première année de CPGE.</p>
+        <h3>Journal – Naimi</h3>
+        <p>Témoignage d’une première année en CPGE.</p>
         <a href="recit-naimi.html" class="btn">Lire</a>
       </div>
     </div>
@@ -186,18 +281,60 @@ footer{
     <div class="card">
       <img src="https://images.unsplash.com/photo-1503676260728-1c00da094a0b?fit=crop&w=800&h=400">
       <div class="card-content">
-        <h3>Fiches HGGMC</h3>
-        <p>Accéder aux fiches de révision niveau prépa.</p>
+        <h3>Plateforme de Révision</h3>
+        <p>Accéder aux fiches HGGMC et conseils méthodologiques.</p>
         <a href="plateforme.html" class="btn">Voir</a>
       </div>
     </div>
 
   </div>
+
+  <div class="stats">
+    <div class="stat">
+      <h2>46</h2>
+      <p>Membres actifs</p>
+    </div>
+    <div class="stat">
+      <h2>6</h2>
+      <p>Pôles stratégiques</p>
+    </div>
+    <div class="stat">
+      <h2>100%</h2>
+      <p>Engagement</p>
+    </div>
+  </div>
+
 </section>
 
 <footer>
-© 2026 Prépa Excellence de Sada — Tous droits réservés
+  © 2026 Prépa Excellence de Sada — Tous droits réservés
 </footer>
+
+<script>
+function openMenu(){
+  document.getElementById("sideMenu").style.right="0";
+}
+
+function closeMenu(){
+  document.getElementById("sideMenu").style.right="-320px";
+}
+
+/* Animation apparition cartes */
+const cards = document.querySelectorAll(".card");
+
+function revealCards(){
+  const trigger = window.innerHeight * 0.85;
+  cards.forEach(card=>{
+    const top = card.getBoundingClientRect().top;
+    if(top < trigger){
+      card.classList.add("show");
+    }
+  });
+}
+
+window.addEventListener("scroll", revealCards);
+revealCards();
+</script>
 
 </body>
 </html>
