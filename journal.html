@@ -8,16 +8,11 @@
 <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
 
 <style>
-*{
-    margin:0;
-    padding:0;
-    box-sizing:border-box;
-}
-
 body{
     font-family:'Poppins',sans-serif;
     background:#f4f7fb;
     color:#1c1c1c;
+    margin:0;
 }
 
 /* NAVBAR */
@@ -34,25 +29,10 @@ nav{
     z-index:1000;
 }
 
-nav h2{
-    color:#0b3c78;
-}
-
-nav ul{
-    list-style:none;
-    display:flex;
-    gap:25px;
-}
-
-nav ul li a{
-    text-decoration:none;
-    color:#0b3c78;
-    font-weight:500;
-}
-
-nav ul li a:hover{
-    opacity:0.6;
-}
+nav h2{color:#0b3c78;}
+nav ul{list-style:none; display:flex; gap:25px;}
+nav ul li a{text-decoration:none; color:#0b3c78; font-weight:500;}
+nav ul li a:hover{opacity:0.6;}
 
 /* HEADER */
 .header-section{
@@ -103,22 +83,6 @@ section{
     line-height:1.5;
 }
 
-/* BUTTON */
-.btn{
-    display:inline-block;
-    margin-top:40px;
-    padding:12px 30px;
-    background:#0b3c78;
-    color:white;
-    border-radius:25px;
-    text-decoration:none;
-    transition:0.3s;
-}
-
-.btn:hover{
-    opacity:0.8;
-}
-
 /* FOOTER */
 footer{
     background:#072a55;
@@ -145,31 +109,28 @@ footer{
 
 <div class="header-section">
     <h1>Journal de la Prépa</h1>
-    <p>Témoignages, récits et parcours des étudiants de la Prépa Excellence de Sada</p>
+    <p>Découvrez les récits et témoignages des étudiants de la Prépa Excellence de Sada.</p>
 </div>
 
 <section>
     <div class="grid">
-
-        <a href="article-amine.html" class="card">
+        <!-- Carte 1 -->
+        <a href="recit-amine.html" class="card">
             <h3>De Sada aux grandes écoles : mon parcours</h3>
             <p>Amine raconte son expérience et les défis rencontrés pendant sa CPGE.</p>
         </a>
 
-        <a href="article-aicha.html" class="card">
-            <h3>Être étudiant en CPGE à Mayotte</h3>
-            <p>Aïcha partage son quotidien, sa motivation et ses réussites académiques.</p>
+        <!-- Carte 2 -->
+        <a href="recit-aicha.html" class="card">
+            <h3>Vivre la CPGE à Sada</h3>
+            <p>Aicha partage son quotidien, ses réussites et ses difficultés au sein de la prépa.</p>
         </a>
 
-        <a href="article-selim.html" class="card">
-            <h3>Le doute, la pression et la réussite</h3>
-            <p>Selim témoigne des obstacles surmontés et des stratégies pour réussir.</p>
+        <!-- Carte 3 -->
+        <a href="recit-selim.html" class="card">
+            <h3>Persévérer malgré les obstacles</h3>
+            <p>Selim raconte comment la Prépa Excellence l’a aidé à surmonter ses défis académiques.</p>
         </a>
-
-    </div>
-
-    <div style="text-align:center;">
-        <a href="index.html" class="btn">Retour à l’accueil</a>
     </div>
 </section>
 
