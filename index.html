@@ -10,7 +10,7 @@
 <style>
 /* ================= RESET ================= */
 *{margin:0;padding:0;box-sizing:border-box;}
-body{font-family:'Inter',sans-serif;background:#f4f8fd;color:#111;overflow-x:hidden;}
+body{font-family:'Inter',sans-serif;background:#f4f8fd;color:#111;overflow-x:hidden;scroll-behavior:smooth;}
 
 /* ================= HEADER ================= */
 header{
@@ -20,16 +20,20 @@ header{
 }
 .logo{text-decoration:none;display:flex;flex-direction:column;align-items:center;}
 .logo-main{font-family:'Playfair Display', serif;font-size:36px;font-weight:800;display:flex;align-items:center;justify-content:center;}
-.logo-x{font-size:48px;color:#0f5fc4;transform:rotate(-10deg);text-shadow:2px 2px 5px rgba(0,0,0,0.2);margin:0 2px;}
+.logo-x{font-size:48px;color:#0f5fc4;transform:rotate(-10deg);text-shadow:2px 2px 5px rgba(0,0,0,0.2);margin:0 2px;transition:0.4s;}
+.logo-x:hover{transform:rotate(-10deg) scale(1.2);}
 .logo-sub{font-size:12px;color:#0b3c78;margin-top:2px;}
 .menu{font-size:28px;cursor:pointer;color:#0b3c78;}
 
 /* ================= SIDE MENU ================= */
+.overlay{position:fixed;top:0;left:0;width:100%;height:100%;background:rgba(0,0,0,0.4);opacity:0;visibility:hidden;transition:0.4s;z-index:1500;}
+.overlay.active{opacity:1;visibility:visible;}
 .side-menu{
   position:fixed;top:0;right:-320px;width:300px;height:100%;
   background:white;box-shadow:-5px 0 40px rgba(0,0,0,0.15);
   padding:80px 30px;display:flex;flex-direction:column;transition:0.4s ease;z-index:2000;
 }
+.side-menu.active{right:0;}
 .side-menu a{margin:20px 0;font-weight:600;font-size:18px;text-decoration:none;color:#0b3c78;transition:0.3s;}
 .side-menu a:hover{transform:translateX(5px);}
 .close-btn{position:absolute;top:20px;right:25px;font-size:30px;cursor:pointer;color:#0b3c78;}
@@ -41,28 +45,30 @@ header{
   background:linear-gradient(135deg,#0b3c78,#0f5fc4);
   overflow:hidden;margin-top:80px;padding:0 20px;
 }
-.hero::before{
-  content:"";position:absolute;width:150%;height:150%;background:rgba(255,255,255,0.1);
-  border-radius:50%;top:-50%;left:-25%;animation:float 10s infinite ease-in-out;
-}
 .hero-content{position:relative;z-index:1;animation:fadeHero 1.5s ease;}
-.hero h1{font-size:55px;font-weight:800;margin-bottom:20px;line-height:1.1;}
+.hero h1{font-size:55px;font-weight:800;margin-bottom:20px;line-height:1.1;overflow:hidden;}
 .hero p{max-width:700px;margin:auto;font-size:20px;opacity:0.9;}
 
+/* LETTER ANIMATION HERO */
+.letter{display:inline-block;opacity:0;transform:translateY(50px);animation:fadeUp 0.5s forwards;}
+@keyframes fadeUp{to{opacity:1;transform:translateY(0);}}
+
 /* VAGUE DESIGN EN BAS DU HERO */
-.hero-wave{
-  position:absolute;bottom:0;left:0;width:100%;overflow:hidden;line-height:0;}
+.hero-wave{position:absolute;bottom:0;left:0;width:100%;overflow:hidden;line-height:0;}
 .hero-wave svg{position:relative;display:block;width:calc(100% + 1.3px);height:150px;}
 
 /* ================= NEWS ================= */
 section{padding:100px 6%;max-width:1200px;margin:auto;}
 .section-title{text-align:center;font-size:38px;color:#0b3c78;margin-bottom:60px;font-weight:800;}
 .news-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));gap:40px;}
-.news-card{background:white;border-radius:20px;overflow:hidden;box-shadow:0 20px 50px rgba(0,0,0,0.08);transition:0.4s;cursor:pointer;}
+.news-card{background:white;border-radius:20px;overflow:hidden;box-shadow:0 20px 50px rgba(0,0,0,0.08);transition:0.4s;cursor:pointer;position:relative;}
 .news-card:hover{transform:translateY(-12px);}
-.news-card img{width:100%;height:220px;object-fit:cover;}
+.news-card img{width:100%;height:220px;object-fit:cover;transition:0.4s;}
+.news-card:hover img{transform:scale(1.05);}
 .news-card-content{padding:25px;}
 .news-card-content h3{color:#0b3c78;margin-bottom:10px;}
+.read-btn{display:inline-block;margin-top:10px;padding:8px 18px;background:#0f5fc4;color:white;border-radius:25px;text-decoration:none;transition:0.3s;}
+.read-btn:hover{background:#0b3c78;}
 
 /* ================= IA SECTION ================= */
 .ai-section{background:white;padding:80px 6%;border-radius:20px;box-shadow:0 20px 50px rgba(0,0,0,0.05);}
@@ -85,7 +91,9 @@ section{padding:100px 6%;max-width:1200px;margin:auto;}
 .contact-section button:hover{background:#e6f0ff;}
 
 /* ================= FOOTER ================= */
-footer{background:#072a55;color:white;text-align:center;padding:50px 6%;margin-top:50px;}
+footer{background:#072a55;color:white;text-align:center;padding:50px 6%;margin-top:50px;display:flex;flex-direction:column;align-items:center;gap:15px;}
+footer a{color:white;text-decoration:none;transition:0.3s;}
+footer a:hover{color:#0f5fc4;}
 
 /* ================= ANIMATIONS ================= */
 @keyframes fadeHero{from{opacity:0;transform:translateY(40px);}to{opacity:1;transform:translateY(0);}}
@@ -103,7 +111,7 @@ footer{background:#072a55;color:white;text-align:center;padding:50px 6%;margin-t
   <div class="menu">☰</div>
 </header>
 
-<!-- SIDE MENU -->
+<div class="overlay" id="overlay" onclick="closeMenu()"></div>
 <div id="sideMenu" class="side-menu">
   <span class="close-btn" onclick="closeMenu()">×</span>
   <a href="index.html">Accueil</a>
@@ -116,7 +124,7 @@ footer{background:#072a55;color:white;text-align:center;padding:50px 6%;margin-t
 <!-- HERO -->
 <div class="hero">
   <div class="hero-content">
-    <h1>L’Excellence Mahoraise</h1>
+    <h1 id="heroText">L’Excellence Mahoraise</h1>
     <p>Plateforme académique digitale officielle de la Prépa Excellence de Sada.</p>
   </div>
   <div class="hero-wave">
@@ -135,6 +143,7 @@ footer{background:#072a55;color:white;text-align:center;padding:50px 6%;margin-t
     <div class="news-card-content">
       <h3>Conférence Inter Invest</h3>
       <p>Résumé complet de l'événement du 23 janvier 2026.</p>
+      <a class="read-btn" href="evenement-interinvest.html">Lire</a>
     </div>
   </div>
   <div class="news-card" onclick="location.href='fiche-hggmc-afrique-moyen-orient.html'">
@@ -142,6 +151,7 @@ footer{background:#072a55;color:white;text-align:center;padding:50px 6%;margin-t
     <div class="news-card-content">
       <h3>Nouvelle fiche HGGMC</h3>
       <p>Afrique & Moyen-Orient – 1ère année CPGE.</p>
+      <a class="read-btn" href="fiche-hggmc-afrique-moyen-orient.html">Lire</a>
     </div>
   </div>
 </div>
@@ -189,15 +199,31 @@ footer{background:#072a55;color:white;text-align:center;padding:50px 6%;margin-t
 
 <footer>
 © 2026 Prépa Excellence de Sada — Tous droits réservés
+<div>
+<a href="https://www.instagram.com/cpge_sada_ytte" target="_blank">Instagram</a> | 
+<a href="https://www.linkedin.com/company/association-prepa-excellence-de-sada" target="_blank">LinkedIn</a>
+</div>
 </footer>
 
 <script>
 // MENU HAMBURGER
 const menuBtn = document.querySelector(".menu");
 const sideMenu = document.getElementById("sideMenu");
-function openMenu(){sideMenu.style.right="0";}
-function closeMenu(){sideMenu.style.right="-320px";}
-menuBtn.addEventListener("click", openMenu);
+const overlay = document.getElementById("overlay");
+menuBtn.addEventListener("click", () => {sideMenu.classList.add("active"); overlay.classList.add("active");});
+function closeMenu(){sideMenu.classList.remove("active"); overlay.classList.remove("active");}
+
+// HERO LETTER ANIMATION
+const heroText = document.getElementById("heroText");
+let letters = heroText.textContent.split("");
+heroText.textContent = "";
+letters.forEach((letter,i)=>{
+    let span = document.createElement("span");
+    span.textContent = letter;
+    span.classList.add("letter");
+    span.style.animationDelay = (i*0.05)+"s";
+    heroText.appendChild(span);
+});
 
 // IA SIMULÉE AVANCÉE
 function sendMessage(){
@@ -208,24 +234,17 @@ function sendMessage(){
 
     chat.innerHTML += "<p><strong>Vous :</strong> " + userText + "</p>";
     let text = userText.toLowerCase();
-    let response = "Merci pour votre question. Je vais te donner une réponse claire :";
+    let responses = [];
 
-    if(text.includes("association")) {
-        response = "La Prépa Excellence de Sada est une association étudiante qui accompagne les étudiants de CPGE à Mayotte. Elle valorise les talents, crée un environnement propice à l'excellence et favorise le rayonnement académique local et international.";
-    } else if(text.includes("concours")) {
-        response = "Nous proposons des conseils et des fiches de révision pour préparer efficacement les concours scientifiques et économiques. Des simulations et des entraînements sont aussi disponibles.";
-    } else if(text.includes("fiches") || text.includes("révision")) {
-        response = "Les fiches de révision couvrent les matières HGGMC, maths, physique et chimie. Chaque fiche est accompagnée de dialogues explicatifs et de résumés pour mieux comprendre le contenu.";
-    } else if(text.includes("journal") || text.includes("récit")) {
-        response = "Le Journal de la Prépa contient les récits des étudiants, leurs parcours, réussites et conseils. Chaque article est accessible en cliquant sur la section 'Journal'.";
-    } else if(text.includes("plateforme")) {
-        response = "La plateforme de révision centralise toutes les fiches, conseils et outils pour aider à l'étude. Les étudiants peuvent également commenter et échanger sur les fiches.";
-    } else if(text.includes("contact") || text.includes("email")) {
-        response = "Vous pouvez nous contacter directement via le formulaire en bas de page en précisant votre statut et votre message. Nous répondrons rapidement.";
-    } else if(text.includes("bonjour") || text.includes("salut")) {
-        response = "Bonjour 👋 ! Je suis l'assistant académique. Posez-moi vos questions sur l'association, les fiches, le journal ou les concours.";
-    } 
+    if(text.includes("association")) responses.push("La Prépa Excellence de Sada accompagne les étudiants en CPGE, valorise les talents et favorise le rayonnement académique.");
+    if(text.includes("concours")) responses.push("Nous proposons des conseils et fiches de révision pour préparer les concours scientifiques et économiques.");
+    if(text.includes("fiches") || text.includes("révision")) responses.push("Les fiches couvrent HGGMC, maths, physique, chimie, avec dialogues explicatifs pour chaque thème.");
+    if(text.includes("journal") || text.includes("récit")) responses.push("Le Journal contient les récits des étudiants, parcours, réussites et conseils, accessible dans la section 'Journal'.");
+    if(text.includes("plateforme")) responses.push("La plateforme centralise toutes les fiches, conseils et outils pour aider à l'étude et commentaires des étudiants.");
+    if(text.includes("contact") || text.includes("email")) responses.push("Vous pouvez nous contacter via le formulaire ci-dessous en précisant votre statut et votre message.");
+    if(text.includes("bonjour") || text.includes("salut")) responses.push("Bonjour 👋 ! Posez vos questions sur l'association, fiches, journal ou concours.");
 
+    let response = responses.length>0 ? responses[Math.floor(Math.random()*responses.length)] : "Merci pour votre question. Je vais te donner une réponse claire :";
     chat.innerHTML += "<p><strong>Assistant :</strong> " + response + "</p>";
     input.value = "";
     chat.scrollTop = chat.scrollHeight;
