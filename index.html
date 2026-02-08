@@ -67,6 +67,7 @@ section{padding:100px 6%;max-width:1200px;margin:auto;}
 /* ================= IA SECTION ================= */
 .ai-section{background:white;padding:80px 6%;border-radius:20px;box-shadow:0 20px 50px rgba(0,0,0,0.05);}
 .chat-box{border:1px solid #ddd;border-radius:15px;padding:20px;height:300px;overflow-y:auto;background:#f9fbff;margin-bottom:20px;}
+.chat-box p{margin-bottom:10px;}
 .chat-input{display:flex;gap:10px;}
 .chat-input input{flex:1;padding:12px;border-radius:10px;border:1px solid #ccc;}
 .chat-input button{background:#0b3c78;color:white;border:none;padding:12px 20px;border-radius:10px;cursor:pointer;}
@@ -118,7 +119,6 @@ footer{background:#072a55;color:white;text-align:center;padding:50px 6%;margin-t
     <h1>L’Excellence Mahoraise</h1>
     <p>Plateforme académique digitale officielle de la Prépa Excellence de Sada.</p>
   </div>
-  <!-- VAGUE DESIGN -->
   <div class="hero-wave">
     <svg viewBox="0 0 500 150" preserveAspectRatio="none">
       <path d="M0.00,49.98 C150.00,150.00 349.74,-50.00 500.00,49.98 L500.00,150.00 L0.00,150.00 Z" style="stroke:none;fill:#f4f8fd;"></path>
@@ -152,7 +152,7 @@ footer{background:#072a55;color:white;text-align:center;padding:50px 6%;margin-t
 <h2 class="section-title">Assistant Académique IA</h2>
 <div class="ai-section">
   <div class="chat-box" id="chatBox">
-    <p><strong>Assistant :</strong> Bonjour 👋 Posez-moi votre question sur les concours ou les fiches.</p>
+    <p><strong>Assistant :</strong> Bonjour 👋 Posez-moi votre question sur les concours, fiches ou l'association.</p>
   </div>
   <div class="chat-input">
     <input type="text" id="userInput" placeholder="Écrivez votre question...">
@@ -192,23 +192,43 @@ footer{background:#072a55;color:white;text-align:center;padding:50px 6%;margin-t
 </footer>
 
 <script>
-/* MENU HAMBURGER */
+// MENU HAMBURGER
 const menuBtn = document.querySelector(".menu");
 const sideMenu = document.getElementById("sideMenu");
 function openMenu(){sideMenu.style.right="0";}
 function closeMenu(){sideMenu.style.right="-320px";}
 menuBtn.addEventListener("click", openMenu);
 
-/* IA SIMULÉE */
+// IA SIMULÉE AVANCÉE
 function sendMessage(){
-  let input=document.getElementById("userInput");
-  let chat=document.getElementById("chatBox");
-  if(input.value.trim()!==""){
-    chat.innerHTML+="<p><strong>Vous :</strong> "+input.value+"</p>";
-    chat.innerHTML+="<p><strong>Assistant :</strong> Merci pour votre question. Une réponse académique détaillée sera bientôt disponible.</p>";
-    input.value="";
-    chat.scrollTop=chat.scrollHeight;
-  }
+    let input = document.getElementById("userInput");
+    let chat = document.getElementById("chatBox");
+    let userText = input.value.trim();
+    if(userText === "") return;
+
+    chat.innerHTML += "<p><strong>Vous :</strong> " + userText + "</p>";
+    let text = userText.toLowerCase();
+    let response = "Merci pour votre question. Je vais te donner une réponse claire :";
+
+    if(text.includes("association")) {
+        response = "La Prépa Excellence de Sada est une association étudiante qui accompagne les étudiants de CPGE à Mayotte. Elle valorise les talents, crée un environnement propice à l'excellence et favorise le rayonnement académique local et international.";
+    } else if(text.includes("concours")) {
+        response = "Nous proposons des conseils et des fiches de révision pour préparer efficacement les concours scientifiques et économiques. Des simulations et des entraînements sont aussi disponibles.";
+    } else if(text.includes("fiches") || text.includes("révision")) {
+        response = "Les fiches de révision couvrent les matières HGGMC, maths, physique et chimie. Chaque fiche est accompagnée de dialogues explicatifs et de résumés pour mieux comprendre le contenu.";
+    } else if(text.includes("journal") || text.includes("récit")) {
+        response = "Le Journal de la Prépa contient les récits des étudiants, leurs parcours, réussites et conseils. Chaque article est accessible en cliquant sur la section 'Journal'.";
+    } else if(text.includes("plateforme")) {
+        response = "La plateforme de révision centralise toutes les fiches, conseils et outils pour aider à l'étude. Les étudiants peuvent également commenter et échanger sur les fiches.";
+    } else if(text.includes("contact") || text.includes("email")) {
+        response = "Vous pouvez nous contacter directement via le formulaire en bas de page en précisant votre statut et votre message. Nous répondrons rapidement.";
+    } else if(text.includes("bonjour") || text.includes("salut")) {
+        response = "Bonjour 👋 ! Je suis l'assistant académique. Posez-moi vos questions sur l'association, les fiches, le journal ou les concours.";
+    } 
+
+    chat.innerHTML += "<p><strong>Assistant :</strong> " + response + "</p>";
+    input.value = "";
+    chat.scrollTop = chat.scrollHeight;
 }
 </script>
 
