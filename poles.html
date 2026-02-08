@@ -9,55 +9,34 @@
 </head>
 <body>
 
+<!-- NAVBAR -->
 <nav>
-    <h2>Prépa Excellence</h2>
-    <ul>
-        <li><a href="index.html">Accueil</a></li>
-        <li><a href="poles.html">Pôles</a></li>
-        <li><a href="journal.html">Journal</a></li>
-        <li><a href="actualites.html">Actualités</a></li>
-        <li><a href="plateforme.html">Plateforme</a></li>
-        <li><a href="contact.html">Contact</a></li>
-    </ul>
+  <div class="logo">Prépa Excellence</div>
+  <div class="hamburger" onclick="toggleMenu()">☰</div>
+  <ul class="nav-links">
+      <li><a href="index.html">Accueil</a></li>
+      <li><a href="poles.html">Pôles</a></li>
+      <li><a href="journal.html">Journal</a></li>
+      <li><a href="actualites.html">Actualités</a></li>
+      <li><a href="plateforme.html">Plateforme</a></li>
+      <li><a href="contact.html">Contact</a></li>
+  </ul>
 </nav>
-
-<div class="header-section">
-    <h1>Nos 6 Pôles Stratégiques</h1>
-    <p>Chaque pôle contribue à l’excellence et au rayonnement de notre prépa.</p>
-</div>
+<script>function toggleMenu(){document.querySelector('.nav-links').classList.toggle('active');}</script>
 
 <section>
-    <div class="grid" style="display:grid; grid-template-columns:repeat(auto-fit,minmax(280px,1fr)); gap:30px;">
-        <div class="card">
-            <h3>Communication & Médias</h3>
-            <p>Image, digital, production et valorisation de l’association.</p>
-        </div>
-        <div class="card">
-            <h3>Événementiel & Culture</h3>
-            <p>Organisation d’événements éducatifs et fédérateurs.</p>
-        </div>
-        <div class="card">
-            <h3>Logistique & Financier</h3>
-            <p>Gestion rigoureuse et transparente des ressources.</p>
-        </div>
-        <div class="card">
-            <h3>Développement & Partenariats</h3>
-            <p>Création de collaborations durables.</p>
-        </div>
-        <div class="card">
-            <h3>Career & Alumni</h3>
-            <p>Construction d’un réseau solide et ambitieux.</p>
-        </div>
-        <div class="card">
-            <h3>Académique & Concours</h3>
-            <p>Préparation, entraide et performance collective.</p>
-        </div>
-    </div>
+<h2 class="section-title">Nos Pôles</h2>
+<div class="grid">
+    <div class="card"><h3>Communication & Médias</h3><p>Image, digital, production et valorisation de l’association.</p></div>
+    <div class="card"><h3>Événementiel & Culture</h3><p>Organisation d’événements éducatifs et fédérateurs.</p></div>
+    <div class="card"><h3>Logistique & Financier</h3><p>Gestion rigoureuse et transparente des ressources.</p></div>
+    <div class="card"><h3>Développement & Partenariats</h3><p>Création de collaborations durables.</p></div>
+    <div class="card"><h3>Career & Alumni</h3><p>Construction d’un réseau solide et ambitieux.</p></div>
+    <div class="card"><h3>Académique & Concours</h3><p>Préparation, entraide et performance collective.</p></div>
+</div>
+<a href="index.html" class="btn">Retour à l'accueil</a>
 </section>
 
-<footer>
-© 2026 Prépa Excellence de Sada — Tous droits réservés
-</footer>
-
+<footer>© 2026 Prépa Excellence de Sada — Tous droits réservés</footer>
 </body>
 </html>
