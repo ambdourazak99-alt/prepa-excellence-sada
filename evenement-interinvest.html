@@ -1,0 +1,187 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Conférence Inter Invest - Prépa Excellence</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
+
+<style>
+*{margin:0;padding:0;box-sizing:border-box}
+body{font-family:'Inter',sans-serif;background:#f4f7fb;color:#1a1a1a}
+
+/* HEADER */
+header{
+  position:fixed;
+  width:100%;
+  background:white;
+  padding:15px 6%;
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+  box-shadow:0 2px 20px rgba(0,0,0,0.05);
+  z-index:1000;
+}
+
+.logo{font-weight:700;font-size:20px;color:#0b3c78}
+.menu{font-size:26px;cursor:pointer;color:#0b3c78}
+
+/* MENU */
+.side-menu{
+  position:fixed;
+  top:0;
+  right:-320px;
+  width:300px;
+  height:100%;
+  background:white;
+  box-shadow:-5px 0 30px rgba(0,0,0,0.15);
+  padding:70px 30px;
+  display:flex;
+  flex-direction:column;
+  transition:0.4s ease;
+  z-index:2000;
+}
+
+.side-menu a{
+  text-decoration:none;
+  color:#0b3c78;
+  font-weight:600;
+  margin:15px 0;
+  font-size:18px;
+}
+
+.close-btn{
+  position:absolute;
+  top:20px;
+  right:25px;
+  font-size:30px;
+  cursor:pointer;
+  color:#0b3c78;
+}
+
+/* HERO IMAGE */
+.hero{
+  margin-top:70px;
+  height:400px;
+  background:linear-gradient(rgba(11,60,120,0.8),rgba(11,60,120,0.8)),
+  url('https://images.unsplash.com/photo-1596496051282-5e6fddc7de76?fit=crop&w=1400') center/cover;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  color:white;
+  text-align:center;
+  padding:20px;
+}
+
+.hero h1{
+  font-size:32px;
+  max-width:800px;
+}
+
+/* CONTENT */
+.content{
+  padding:60px 10%;
+  line-height:1.8;
+}
+
+.content h2{
+  margin-top:40px;
+  color:#0b3c78;
+}
+
+.content p{
+  margin-top:15px;
+}
+
+/* FOOTER */
+footer{
+  background:#0b3c78;
+  color:white;
+  text-align:center;
+  padding:40px 6%;
+  margin-top:60px;
+}
+</style>
+</head>
+<body>
+
+<header>
+  <div class="logo">Prépa Excellence</div>
+  <div class="menu" onclick="openMenu()">☰</div>
+</header>
+
+<div id="sideMenu" class="side-menu">
+  <span class="close-btn" onclick="closeMenu()">×</span>
+  <a href="index.html">Accueil</a>
+  <a href="poles.html">Pôles</a>
+  <a href="journal.html">Journal</a>
+  <a href="actualites.html">Actualités</a>
+  <a href="plateforme.html">Plateforme</a>
+  <a href="contact.html">Contact</a>
+</div>
+
+<div class="hero">
+  <h1>Conférence – Présentation du groupe Inter Invest et de ses actions en Outre-mer</h1>
+</div>
+
+<div class="content">
+
+<p><strong>Date :</strong> 23 janvier 2026<br>
+<strong>Lieu :</strong> Lycée de Sada, Mayotte</p>
+
+<h2>Un événement stratégique pour Mayotte</h2>
+
+<p>
+Le 23 janvier 2026, l’Association Prépa Excellence de Sada a organisé une conférence exceptionnelle en partenariat avec le groupe Inter Invest. L’objectif était de présenter le rôle du groupe dans le développement économique des territoires d’Outre-mer et d’expliquer les solutions financières proposées aux entreprises mahoraises.
+</p>
+
+<h2>Présentation du groupe Inter Invest</h2>
+
+<p>
+Fondé en 1991, Inter Invest est un groupe financier français indépendant disposant de plus de 34 ans d’expérience. Il accompagne les chefs d’entreprise de la création jusqu’à la transmission de leur patrimoine.
+</p>
+
+<p>
+Aujourd’hui, le groupe compte environ 250 collaborateurs, accompagne plus de 70 000 investisseurs et travaille avec plus de 1 300 partenaires.
+</p>
+
+<h2>Des solutions adaptées aux réalités ultramarines</h2>
+
+<p>
+Les intervenants ont présenté les dispositifs de financement d’équipements professionnels, le renforcement des fonds propres et les mécanismes de défiscalisation comme la loi Girardin industriel.
+</p>
+
+<p>
+Ces outils permettent aux entreprises locales d’investir tout en sécurisant leur trésorerie.
+</p>
+
+<h2>Un impact direct pour Mayotte</h2>
+
+<p>
+Inter Invest soutient plusieurs secteurs clés : BTP, transport, artisanat, services et tourisme. Grâce à une implantation locale durable, le groupe propose un accompagnement de proximité adapté aux réalités économiques de l’île.
+</p>
+
+<h2>Conclusion</h2>
+
+<p>
+Cette conférence a permis aux étudiants et entrepreneurs présents de mieux comprendre les leviers financiers existants pour dynamiser l’économie mahoraise.
+</p>
+
+</div>
+
+<footer>
+© 2026 Prépa Excellence de Sada — Tous droits réservés
+</footer>
+
+<script>
+function openMenu(){
+  document.getElementById("sideMenu").style.right="0";
+}
+function closeMenu(){
+  document.getElementById("sideMenu").style.right="-320px";
+}
+</script>
+
+</body>
+</html>
