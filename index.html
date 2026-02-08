@@ -4,86 +4,199 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Prépa Excellence de Sada</title>
-<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="style.css">
+
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
+
+<style>
+
+/* RESET */
+*{margin:0;padding:0;box-sizing:border-box}
+body{font-family:'Inter',sans-serif;background:#f4f7fb;color:#1a1a1a}
+
+/* HEADER */
+header{
+  position:fixed;
+  width:100%;
+  background:white;
+  padding:15px 5%;
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+  box-shadow:0 2px 15px rgba(0,0,0,0.05);
+  z-index:1000;
+}
+
+.logo{
+  font-weight:700;
+  font-size:20px;
+  color:#0b3c78;
+}
+
+.menu{
+  font-size:26px;
+  cursor:pointer;
+}
+
+/* HERO */
+.hero{
+  margin-top:80px;
+  height:80vh;
+  background:url('https://images.unsplash.com/photo-1523050854058-8df90110c9f1?fit=crop&w=1600&h=900') center/cover;
+  display:flex;
+  align-items:flex-end;
+  padding:60px;
+  color:white;
+  position:relative;
+}
+
+.hero::after{
+  content:'';
+  position:absolute;
+  inset:0;
+  background:linear-gradient(to top, rgba(0,0,0,0.7), transparent);
+}
+
+.hero-content{
+  position:relative;
+  z-index:2;
+  max-width:600px;
+}
+
+.hero h1{
+  font-size:42px;
+  margin-bottom:15px;
+}
+
+.hero p{
+  font-size:18px;
+  opacity:0.9;
+}
+
+/* SECTION */
+section{
+  padding:80px 5%;
+}
+
+.section-title{
+  font-size:28px;
+  margin-bottom:40px;
+  color:#0b3c78;
+}
+
+/* GRID ARTICLES */
+.grid{
+  display:grid;
+  grid-template-columns:repeat(auto-fit,minmax(300px,1fr));
+  gap:30px;
+}
+
+.card{
+  background:white;
+  border-radius:15px;
+  overflow:hidden;
+  box-shadow:0 10px 25px rgba(0,0,0,0.08);
+  transition:0.3s;
+}
+
+.card:hover{
+  transform:translateY(-8px);
+  box-shadow:0 20px 35px rgba(0,0,0,0.15);
+}
+
+.card img{
+  width:100%;
+  height:200px;
+  object-fit:cover;
+}
+
+.card-content{
+  padding:20px;
+}
+
+.card-content h3{
+  margin-bottom:10px;
+  color:#0b3c78;
+}
+
+.card-content p{
+  font-size:14px;
+  margin-bottom:15px;
+}
+
+.btn{
+  display:inline-block;
+  padding:8px 20px;
+  background:#0b3c78;
+  color:white;
+  border-radius:30px;
+  text-decoration:none;
+  font-size:14px;
+}
+
+/* FOOTER */
+footer{
+  background:#0b3c78;
+  color:white;
+  text-align:center;
+  padding:40px 5%;
+  margin-top:60px;
+}
+
+</style>
 </head>
 <body>
 
-<!-- NAVBAR -->
-<nav>
+<header>
   <div class="logo">Prépa Excellence</div>
-  <div class="hamburger" onclick="toggleMenu()">☰</div>
-  <ul class="nav-links">
-      <li><a href="index.html">Accueil</a></li>
-      <li><a href="poles.html">Pôles</a></li>
-      <li><a href="journal.html">Journal</a></li>
-      <li><a href="actualites.html">Actualités</a></li>
-      <li><a href="plateforme.html">Plateforme</a></li>
-      <li><a href="contact.html">Contact</a></li>
-  </ul>
-</nav>
+  <div class="menu">☰</div>
+</header>
 
-<script>
-function toggleMenu(){ document.querySelector('.nav-links').classList.toggle('active'); }
-</script>
-
-<!-- HERO -->
-<section class="hero">
+<!-- HERO ACTUALITÉ PRINCIPALE -->
+<div class="hero">
   <div class="hero-content">
-    <h1>L’excellence mahoraise commence ici.</h1>
-    <p>Prépa Excellence de Sada est une association étudiante engagée au service de la réussite, de la cohésion et du rayonnement de la CPGE de Sada.</p>
-    <a href="#mission" class="btn">Découvrir</a>
+    <h1>Conférence Inter Invest à Mayotte</h1>
+    <p>Retour sur un événement majeur pour le développement économique local.</p>
   </div>
-</section>
+</div>
 
-<!-- MISSION -->
-<section id="mission">
-  <h2 class="section-title">Notre Mission</h2>
-  <p class="text-center">Accompagner chaque étudiant dans son parcours académique, valoriser les talents et construire un environnement propice à l’excellence. Nous croyons en la force du collectif, en la discipline et en l’ambition.</p>
-</section>
+<!-- SECTION ACTUALITÉS -->
+<section>
+  <h2 class="section-title">À la une</h2>
 
-<!-- POLES -->
-<section id="poles" class="animated-section">
-  <h2 class="section-title">Nos Pôles</h2>
   <div class="grid">
-      <div class="card"><h3>Communication & Médias</h3><p>Image, digital, production et valorisation de l’association.</p><a href="poles.html" class="btn">Voir plus</a></div>
-      <div class="card"><h3>Événementiel & Culture</h3><p>Organisation d’événements éducatifs et fédérateurs.</p><a href="poles.html" class="btn">Voir plus</a></div>
-      <div class="card"><h3>Logistique & Financier</h3><p>Gestion rigoureuse et transparente des ressources.</p><a href="poles.html" class="btn">Voir plus</a></div>
-      <div class="card"><h3>Développement & Partenariats</h3><p>Création de collaborations durables.</p><a href="poles.html" class="btn">Voir plus</a></div>
-      <div class="card"><h3>Career & Alumni</h3><p>Construction d’un réseau solide et ambitieux.</p><a href="poles.html" class="btn">Voir plus</a></div>
-      <div class="card"><h3>Académique & Concours</h3><p>Préparation, entraide et performance collective.</p><a href="poles.html" class="btn">Voir plus</a></div>
+
+    <div class="card">
+      <img src="https://images.unsplash.com/photo-1596496051282-5e6fddc7de76?fit=crop&w=800&h=400">
+      <div class="card-content">
+        <h3>Conférence Inter Invest</h3>
+        <p>Présentation des dispositifs financiers pour Mayotte.</p>
+        <a href="evenement-interinvest.html" class="btn">Lire</a>
+      </div>
+    </div>
+
+    <div class="card">
+      <img src="https://images.unsplash.com/photo-1522202176988-66273c2fd55f?fit=crop&w=800&h=400">
+      <div class="card-content">
+        <h3>Journal - Naimi</h3>
+        <p>Son expérience en première année de CPGE.</p>
+        <a href="recit-naimi.html" class="btn">Lire</a>
+      </div>
+    </div>
+
+    <div class="card">
+      <img src="https://images.unsplash.com/photo-1503676260728-1c00da094a0b?fit=crop&w=800&h=400">
+      <div class="card-content">
+        <h3>Fiches HGGMC</h3>
+        <p>Accéder aux fiches de révision niveau prépa.</p>
+        <a href="plateforme.html" class="btn">Voir</a>
+      </div>
+    </div>
+
   </div>
-</section>
-
-<!-- STATISTIQUES -->
-<section class="stats">
-  <div class="stat"><h2>46</h2><p>Membres actifs</p></div>
-  <div class="stat"><h2>6</h2><p>Pôles stratégiques</p></div>
-  <div class="stat"><h2>100%</h2><p>Engagement</p></div>
-</section>
-
-<!-- JOURNAL -->
-<section class="journal">
-  <h2 class="section-title">Journal de la Prépa</h2>
-  <div class="grid">
-      <div class="card"><h3>De Sada aux grandes écoles</h3><p>Amine raconte son expérience...</p><a href="article-amine.html" class="btn">Lire</a></div>
-      <div class="card"><h3>Parcours d’études</h3><p>Youmrane partage son témoignage...</p><a href="article-youmrane.html" class="btn">Lire</a></div>
-      <div class="card"><h3>Réussite et défis</h3><p>Mouzida explique son quotidien en CPGE...</p><a href="article-mouzida.html" class="btn">Lire</a></div>
-  </div>
-</section>
-
-<!-- CONTACT -->
-<section id="contact">
-  <h2 class="section-title">Nous contacter</h2>
-  <p>Email : prepasada@gmail.com</p>
-  <p>Téléphone : +33 7 73 44 28 79</p>
-  <p>Quartier Doujani BP 1101, 97640 Sada</p>
-  <p>Instagram : <a href="https://www.instagram.com/cpge_sada_ytte" target="_blank">@cpge_sada_ytte</a></p>
-  <p>LinkedIn : <a href="https://www.linkedin.com/company/prepa-excellence-de-sada" target="_blank">Association Prépa Excellence de Sada</a></p>
 </section>
 
 <footer>
-  © 2026 Prépa Excellence de Sada — Tous droits réservés
+© 2026 Prépa Excellence de Sada — Tous droits réservés
 </footer>
 
 </body>
