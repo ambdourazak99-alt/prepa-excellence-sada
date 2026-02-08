@@ -1,14 +1,175 @@
-<section>
-<h2 class="section-title">Actualités & Événements</h2>
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Actualités - Prépa Excellence</title>
 
-<div class="grid">
-  <!-- Événement 1 -->
-  <div class="card">
-    <img src="https://images.unsplash.com/photo-1596496051282-5e6fddc7de76?fit=crop&w=800&h=400" alt="Conférence Inter Invest" style="width:100%; border-radius:10px;">
-    <h3>Conférence – Groupe Inter Invest à Mayotte</h3>
-    <p><strong>Date :</strong> 23 janvier 2026</p>
-    <p><strong>Lieu :</strong> Lycée de Sada</p>
-    <a href="evenement-interinvest.html" class="btn">Voir les détails</a>
-  </div>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
+
+<style>
+*{margin:0;padding:0;box-sizing:border-box}
+body{font-family:'Inter',sans-serif;background:#f4f7fb;color:#1a1a1a}
+
+/* HEADER */
+header{
+  position:fixed;
+  width:100%;
+  background:white;
+  padding:15px 6%;
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+  box-shadow:0 2px 20px rgba(0,0,0,0.05);
+  z-index:1000;
+}
+
+.logo{font-weight:700;font-size:20px;color:#0b3c78}
+.menu{font-size:26px;cursor:pointer;color:#0b3c78}
+
+/* MENU LATÉRAL */
+.side-menu{
+  position:fixed;
+  top:0;
+  right:-320px;
+  width:300px;
+  height:100%;
+  background:white;
+  box-shadow:-5px 0 30px rgba(0,0,0,0.15);
+  padding:70px 30px;
+  display:flex;
+  flex-direction:column;
+  transition:0.4s ease;
+  z-index:2000;
+}
+
+.side-menu a{
+  text-decoration:none;
+  color:#0b3c78;
+  font-weight:600;
+  margin:15px 0;
+  font-size:18px;
+}
+
+.close-btn{
+  position:absolute;
+  top:20px;
+  right:25px;
+  font-size:30px;
+  cursor:pointer;
+  color:#0b3c78;
+}
+
+/* SECTION */
+section{padding:120px 6% 80px}
+.section-title{
+  font-size:32px;
+  margin-bottom:40px;
+  color:#0b3c78;
+}
+
+/* GRID */
+.grid{
+  display:grid;
+  grid-template-columns:repeat(auto-fit,minmax(320px,1fr));
+  gap:30px;
+}
+
+.card{
+  background:white;
+  border-radius:18px;
+  overflow:hidden;
+  box-shadow:0 15px 30px rgba(0,0,0,0.08);
+  transition:0.4s;
+}
+
+.card:hover{
+  transform:translateY(-10px);
+  box-shadow:0 25px 40px rgba(0,0,0,0.15);
+}
+
+.card img{
+  width:100%;
+  height:220px;
+  object-fit:cover;
+}
+
+.card-content{
+  padding:20px;
+}
+
+.card-content h3{
+  color:#0b3c78;
+  margin-bottom:10px;
+}
+
+.btn{
+  display:inline-block;
+  padding:8px 20px;
+  background:#0b3c78;
+  color:white;
+  border-radius:30px;
+  text-decoration:none;
+  margin-top:10px;
+}
+
+/* FOOTER */
+footer{
+  background:#0b3c78;
+  color:white;
+  text-align:center;
+  padding:40px 6%;
+  margin-top:60px;
+}
+</style>
+</head>
+<body>
+
+<header>
+  <div class="logo">Prépa Excellence</div>
+  <div class="menu" onclick="openMenu()">☰</div>
+</header>
+
+<div id="sideMenu" class="side-menu">
+  <span class="close-btn" onclick="closeMenu()">×</span>
+  <a href="index.html">Accueil</a>
+  <a href="poles.html">Pôles</a>
+  <a href="journal.html">Journal</a>
+  <a href="actualites.html">Actualités</a>
+  <a href="plateforme.html">Plateforme</a>
+  <a href="contact.html">Contact</a>
 </div>
+
+<section>
+  <h2 class="section-title">Actualités & Événements</h2>
+
+  <div class="grid">
+
+    <div class="card">
+      <img src="https://images.unsplash.com/photo-1596496051282-5e6fddc7de76?fit=crop&w=800&h=400">
+      <div class="card-content">
+        <h3>Conférence Inter Invest – 23 janvier 2026</h3>
+        <p>Lycée de Sada – Retour sur un événement stratégique pour Mayotte.</p>
+        <a href="evenement-interinvest.html" class="btn">Lire l’article</a>
+      </div>
+    </div>
+
+  </div>
+
 </section>
+
+<footer>
+© 2026 Prépa Excellence de Sada — Tous droits réservés
+</footer>
+
+<script>
+function openMenu(){
+  document.getElementById("sideMenu").style.right="0";
+}
+function closeMenu(){
+  document.getElementById("sideMenu").style.right="-320px";
+}
+</script>
+
+</body>
+</html>
