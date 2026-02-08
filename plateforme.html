@@ -3,44 +3,82 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Plateforme de Révision - Prépa Excellence de Sada</title>
+<title>Plateforme de révision - Prépa Excellence de Sada</title>
 <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="style.css">
 </head>
 <body>
 
+<!-- NAVBAR -->
 <nav>
-    <h2>Prépa Excellence</h2>
-    <ul>
-        <li><a href="index.html">Accueil</a></li>
-        <li><a href="poles.html">Pôles</a></li>
-        <li><a href="journal.html">Journal</a></li>
-        <li><a href="actualites.html">Actualités</a></li>
-        <li><a href="plateforme.html">Plateforme</a></li>
-        <li><a href="contact.html">Contact</a></li>
-    </ul>
+  <div class="logo">Prépa Excellence</div>
+  <div class="hamburger" onclick="toggleMenu()">☰</div>
+  <ul class="nav-links">
+      <li><a href="index.html">Accueil</a></li>
+      <li><a href="poles.html">Pôles</a></li>
+      <li><a href="journal.html">Journal</a></li>
+      <li><a href="actualites.html">Actualités</a></li>
+      <li><a href="plateforme.html">Plateforme</a></li>
+      <li><a href="contact.html">Contact</a></li>
+  </ul>
 </nav>
 
-<div class="header-section">
-    <h1>Plateforme de Révision</h1>
-    <p>Accédez à des cours, QCM et ressources pour optimiser vos révisions et réussir vos concours.</p>
+<script>
+function toggleMenu(){ document.querySelector('.nav-links').classList.toggle('active'); }
+</script>
+
+<!-- HERO -->
+<div class="hero">
+  <div class="hero-content">
+    <h1>Plateforme de révision</h1>
+    <p>Téléchargez vos fiches et discutez avec les autres étudiants pour progresser ensemble.</p>
+  </div>
 </div>
 
 <section>
-    <div class="grid" style="display:grid; grid-template-columns:repeat(auto-fit,minmax(280px,1fr)); gap:30px;">
-        <div class="card">
-            <h3>Cours de Mathématiques</h3>
-            <p>Supports complets pour chaque chapitre, avec exercices corrigés et méthodes pas à pas.</p>
-        </div>
-        <div class="card">
-            <h3>QCM et Quiz</h3>
-            <p>Testez vos connaissances avec des questionnaires interactifs et progressifs.</p>
-        </div>
-        <div class="card">
-            <h3>Ressources complémentaires</h3>
-            <p>Articles, fiches synthétiques et vidéos pour approfondir vos connaissances.</p>
-        </div>
-    </div>
+  <h2 class="section-title">Fiches Mathématiques</h2>
+  <div class="grid">
+      <div class="card">
+          <h3>Algèbre</h3>
+          <a href="https://github.com/TONCOMPTE/prepa-fiches/raw/main/math/algebre.pdf" class="btn" target="_blank">Télécharger</a>
+          <a href="https://github.com/TONCOMPTE/prepa-fiches/discussions/1" class="btn" target="_blank">Commenter / Discuter</a>
+      </div>
+      <div class="card">
+          <h3>Analyse</h3>
+          <a href="https://github.com/TONCOMPTE/prepa-fiches/raw/main/math/analyse.pdf" class="btn" target="_blank">Télécharger</a>
+          <a href="https://github.com/TONCOMPTE/prepa-fiches/discussions/2" class="btn" target="_blank">Commenter / Discuter</a>
+      </div>
+  </div>
+
+  <h2 class="section-title">Fiches Physique</h2>
+  <div class="grid">
+      <div class="card">
+          <h3>Mécanique</h3>
+          <a href="https://github.com/TONCOMPTE/prepa-fiches/raw/main/physique/mecanique.pdf" class="btn" target="_blank">Télécharger</a>
+          <a href="https://github.com/TONCOMPTE/prepa-fiches/discussions/3" class="btn" target="_blank">Commenter / Discuter</a>
+      </div>
+      <div class="card">
+          <h3>Optique</h3>
+          <a href="https://github.com/TONCOMPTE/prepa-fiches/raw/main/physique/optique.pdf" class="btn" target="_blank">Télécharger</a>
+          <a href="https://github.com/TONCOMPTE/prepa-fiches/discussions/4" class="btn" target="_blank">Commenter / Discuter</a>
+      </div>
+  </div>
+
+  <h2 class="section-title">Conseils d’apprentissage</h2>
+  <div class="grid">
+      <div class="card">
+          <h3>Organisation du travail</h3>
+          <a href="https://github.com/TONCOMPTE/prepa-fiches/discussions/5" class="btn" target="_blank">Commenter / Discuter</a>
+      </div>
+      <div class="card">
+          <h3>Gestion du stress</h3>
+          <a href="https://github.com/TONCOMPTE/prepa-fiches/discussions/6" class="btn" target="_blank">Commenter / Discuter</a>
+      </div>
+      <div class="card">
+          <h3>Méthodes de mémorisation</h3>
+          <a href="https://github.com/TONCOMPTE/prepa-fiches/discussions/7" class="btn" target="_blank">Commenter / Discuter</a>
+      </div>
+  </div>
 </section>
 
 <footer>
