@@ -1,78 +1,36 @@
 <!DOCTYPE html>
-<html lang="fr">
+<html>
 <head>
 <meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Prépa Excellence de Sada</title>
-
-<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+<title>Prépa Excellence</title>
 <link rel="stylesheet" href="css/style.css">
-
 </head>
-
 <body>
 
-<nav class="navbar">
-  <div class="logo" onclick="goHome()">Prépa Excellence</div>
-
-  <div class="burger" onclick="toggleMenu()">
-    <div></div>
-    <div></div>
-    <div></div>
-  </div>
+<nav>
+<h1 onclick="location.href='index.html'">Prépa Excellence</h1>
+<div>
+<a href="quiz.html">Quiz</a>
+<a href="login.html">Connexion</a>
+</div>
 </nav>
 
-<div class="menu-overlay" id="menu">
-  <ul>
-    <li onclick="goHome()">Accueil</li>
-    <li onclick="openLogin()">Connexion</li>
-    <li onclick="openQuiz()">Quiz ECG</li>
-    <li onclick="openDashboard()">Espace étudiant</li>
-  </ul>
+<div class="hero">
+<h2>L'excellence commence ici</h2>
+<button onclick="location.href='quiz.html'">Commencer un quiz</button>
 </div>
 
-<section class="hero">
-  <div class="hero-content">
-    <h1>L’excellence mahoraise commence ici</h1>
-    <p>Plateforme académique officielle de la CPGE de Sada</p>
-    <button onclick="openQuiz()">Commencer un quiz</button>
-  </div>
+<section>
+<div class="card">
+<h3>Fiches de révision</h3>
+<p>Accédez aux synthèses ECG.</p>
+</div>
 
-  <!-- Vague SVG -->
-  <div class="wave">
-    <svg viewBox="0 0 1440 320">
-      <path fill="#ffffff" fill-opacity="1"
-      d="M0,96L60,112C120,128,240,160,360,176C480,192,600,192,720,165.3C840,139,960,85,1080,85.3C1200,85,1320,139,1380,165.3L1440,192L1440,320L0,320Z"></path>
-    </svg>
-  </div>
+<div class="card">
+<h3>Copies de concours</h3>
+<p>Analyse des meilleures copies.</p>
+</div>
 </section>
-
-<section class="section">
-  <h2>Nos ressources</h2>
-
-  <div class="cards">
-    <div class="card" onclick="openQuiz()">
-      <h3>Quiz ECG</h3>
-      <p>Testez votre niveau en mathématiques, HGGMC, langues et philosophie.</p>
-    </div>
-
-    <div class="card">
-      <h3>Fiches de révision</h3>
-      <p>Des synthèses structurées pour performer aux concours.</p>
-    </div>
-
-    <div class="card">
-      <h3>Copies de concours</h3>
-      <p>Analyse des meilleures copies pour progresser méthodiquement.</p>
-    </div>
-  </div>
-</section>
-
-<footer>
-  © 2026 Prépa Excellence de Sada — Excellence • Discipline • Ambition
-</footer>
-
-<script src="js/app.js"></script>
 
 </body>
 </html>
