@@ -1,97 +1,38 @@
 <!DOCTYPE html>
 <html lang="fr">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Prépa Excellence de Sada</title>
-  <link rel="stylesheet" href="style.css"/>
-  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+<meta charset="UTF-8">
+<title>Prépa Excellence de Sada</title>
+<link rel="stylesheet" href="css/style.css">
 </head>
 
 <body>
 
-<!-- NAVBAR -->
-<header class="navbar">
-  <div class="logo">Prépa Excellence Sada</div>
-  <nav>
-    <a href="#home">Accueil</a>
-    <a href="#about">À propos</a>
-    <a href="#poles">Nos pôles</a>
-    <a href="#platform">Plateforme</a>
-    <a href="#contact">Contact</a>
-  </nav>
-</header>
-
-<!-- HERO -->
-<section id="home" class="hero">
-  <h1>L’excellence mahoraise s’écrit ici</h1>
-  <p>Une association étudiante engagée pour la réussite collective en CPGE</p>
-  <div class="hero-buttons">
-    <a href="#platform" class="btn-primary">Accéder aux ressources</a>
-    <a href="#about" class="btn-secondary">Découvrir l’association</a>
+<div class="navbar">
+  <div class="logo" onclick="goHome()">Prépa Excellence</div>
+  <div class="burger" onclick="toggleMenu()">
+    <div></div>
+    <div></div>
+    <div></div>
   </div>
-</section>
+</div>
 
-<!-- ABOUT -->
-<section id="about" class="section">
-  <h2>Qui sommes-nous</h2>
-  <p>
-    Prépa Excellence de Sada est une association étudiante créée par et pour les
-    étudiants de CPGE. Notre mission est d’accompagner, structurer et valoriser
-    l’excellence académique à Mayotte et au-delà.
-  </p>
-
-  <div class="values">
-    <div class="card">🎓 Excellence</div>
-    <div class="card">🤝 Solidarité</div>
-    <div class="card">🚀 Ambition</div>
-  </div>
-</section>
-
-<!-- POLES -->
-<section id="poles" class="section dark">
-  <h2>Nos 6 pôles</h2>
-
-  <div class="grid">
-    <div class="pole">🎙️ Communication & Médias</div>
-    <div class="pole">📚 Académique & Concours</div>
-    <div class="pole">🎉 Événementiel & Culture</div>
-    <div class="pole">💰 Logistique & Financier</div>
-    <div class="pole">💼 Partenariats</div>
-    <div class="pole">🚀 Career & Alumni</div>
-  </div>
-</section>
-
-<!-- PLATFORM -->
-<section id="platform" class="section">
-  <h2>Plateforme de révision</h2>
-  <p>
-    Une plateforme pensée par des étudiants pour des étudiants :
-    fiches, cours, corrigés, QCM et méthodes.
-  </p>
-
-  <ul class="features">
-    <li>✔ Fiches de révision PDF</li>
-    <li>✔ QCM interactifs</li>
-    <li>✔ Annales et corrigés</li>
-    <li>✔ Méthodes concours</li>
+<div class="menu-overlay" id="menu">
+  <ul>
+    <li onclick="goHome()">Accueil</li>
+    <li onclick="openLogin()">Connexion</li>
+    <li onclick="openQuiz()">Quiz ECG</li>
+    <li onclick="openDashboard()">Espace étudiant</li>
   </ul>
+</div>
 
-  <a href="#" class="btn-primary">Accéder à la plateforme</a>
-</section>
+<div class="hero">
+  <div>
+    <h1>L’excellence mahoraise commence ici</h1>
+    <button onclick="openQuiz()">Commencer un Quiz</button>
+  </div>
+</div>
 
-<!-- CONTACT -->
-<section id="contact" class="section dark">
-  <h2>Contact</h2>
-  <p>Email : prepasada@gmail.com</p>
-  <p>Téléphone : +262 639 68 03 34</p>
-  <p>Quartier Doujani – BP 1101 – 97640 Sada</p>
-</section>
-
-<footer>
-  <p>© 2026 Prépa Excellence de Sada – Tous droits réservés</p>
-</footer>
-
-<script src="script.js"></script>
+<script src="js/app.js"></script>
 </body>
 </html>
